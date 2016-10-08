@@ -1,0 +1,9 @@
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>	
+
+	<definition name="upcoming_events_page" template="/jsp/meetforeal/events/upcoming_events.jsp" />	
+	
+</tiles-definitions>

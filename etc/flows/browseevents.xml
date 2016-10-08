@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow 
+      http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+	
+	<persistence-context/>
+	<var name="cart" class="com.myownmotivator.model.cart.Cart" />	
+	<on-start>	
+		<evaluate expression="cartSessionManager.initializeCartSession(externalContext.sessionMap.cart)" result="conversationScope.cart" />
+		<set name="flowScope.flag" value="true" type="boolean"  />		
+	</on-start> 
+		
+	<view-state id="browseevents" view="events" redirect="true">	
+		<on-render>						
+			<evaluate expression="eventService.retrieveUpcomingEvents()" result="viewScope.event_list"  />
+			<evaluate expression="eventService.retrieveProfilesUpcomingEvents(flowScope.flag)" result="viewScope.events"  />
+			<set name="viewScope.cart" value="conversationScope.cart"  />
+		</on-render>				
+		<transition on="saveMyEvent" validate="false" bind="false" to="addCartItem"/>
+		<transition on="viewCart" validate="false" bind="false" to="viewCart"/>
+		<transition on="events" validate="false" bind="false" to="browseevents"/>
+		<transition on="bookNow" validate="false" bind="false" to="checkout">
+			<evaluate expression="cartController.createCartBookNow(requestParameters.eid,flowRequestContext)" result="conversationScope.cart" />		    
+		</transition>		
+		<transition on="retrieveCart" validate="false" bind="false" to="browseevents">
+			<evaluate expression="eventService.retrieveEvents()" result="viewScope.events"  />
+		</transition>
+		<transition on="retrieveEvent" validate="false" bind="false" to="retrievetheevent"  history="preserve">
+			<set name="flowScope.eid" value="requestParameters.eid" type="string"/>
+		</transition>					
+	</view-state>
+		
+	<subflow-state id="addCartItem" subflow="addToCart">
+		<!-- This is where we go when the subflow returns. productAdded is
+		     the name of an end-state. -->
+		<transition on="cartItemAdded" to="browseevents"/>		
+	</subflow-state>
+	
+	<subflow-state id="viewCart"  subflow="viewCart">
+		<!-- This is where we go when the subflow returns. productAdded is
+		     the name of an end-state. -->		
+		<transition on="checkout" to="checkout"/>
+		<transition on="checkout_end" to="checkout_end"/>
+	</subflow-state>	
+	
+	<subflow-state id="checkout" subflow="checkoutflow">
+		<!-- This is where we go when the subflow returns. productAdded is
+		     the name of an end-state. -->		
+		<transition on="checkout_end" to="checkout_end">
+			<evaluate expression="cartSessionManager.resetCartSessionObject(flowRequestContext)"/>	
+		</transition>		
+	</subflow-state>		
+	
+	<end-state id="checkout_end" view="externalRedirect:contextRelative:/checkout_ready.do"  /> 
+	<end-state id="endbrowse_checkout" view="checkout"/>
+	<end-state id="end" view="externalRedirect:contextRelative:/index.do"/>
+	<end-state  id="retrievetheevent"  view="externalRedirect:contextRelative:/retrieveevent.do?eid=${flowScope.eid}"/>
+	<end-state id="forum" view="externalRedirect:contextRelative:/browseforums.do"/>
+	<end-state id="blog" view="externalRedirect:contextRelative:/retrieveblog.do"/>
+	<end-state id="profile" view="externalRedirect:contextRelative:/navigateprofile.do"/>
+	<end-state id="events" view="externalRedirect:contextRelative:/browseevents.do"/>
+	<end-state id="logout" view="externalRedirect:contextRelative:/logoutuserhome.do"/> 
+	<end-state id="video" view="externalRedirect:contextRelative:/listvideos.do"/>
+	   
+	<global-transitions>
+    	<transition on="home" bind="false" validate="false" to="end"/>
+    	<transition on="end" bind="false" validate="false" to="end"/>
+    	<transition on="forum" bind="false" validate="false" to="forum" />
+    	<transition on="blog" bind="false" validate="false" to="blog" />
+    	<transition on="profile" bind="false" validate="false" to="profile"/>
+    	<transition on="video" bind="false" validate="false" to="video"/>
+    	<transition on="events" bind="false" validate="false" to="events"/>
+    	<transition on="logout" validate="false" bind="false" to="logout"/>         	
+	</global-transitions>	
+	
+</flow>

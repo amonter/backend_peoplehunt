@@ -1,0 +1,25 @@
+<html>
+<body>
+	<p>
+		Hey ${user.userName}!
+	</p>
+	<p>
+	Yay! Your CrowdScanner account has been successfully created!
+	</p>
+	<p>
+	CrowdScanner is all about curious people asking fun, interesting questions to the people around them, and having serendipitous conversations. 
+	</p>
+	<p>We are developing all the time and would love your feedback so you can throw your ideas at us <a href="http://crowdscanner.uservoice.com/forums/39996-general">here</a>!   
+	</p>
+	
+	------------------------------
+	
+	<p>
+	
+	Plus, you can always contact us on <a href="mailto:ellen@crowdscanner.com">ellen@crowdscanner.com</a>
+	<br><br>
+	The CrowdScanner Gang<br>
+	Galway, Ireland
+	</p>
+</body>
+</html>

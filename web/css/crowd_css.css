@@ -1,0 +1,206 @@
+body {
+	
+	font-family:'Helvetica',Arial,Helvetica,sans-serif;
+	font-size: 1.2 em;	
+	height : 100%;    	
+	line-height:130%;	
+	
+	margin:0px 0px 0px 0px;	
+}
+
+
+a {	
+	text-decoration:none;
+	outline-style:none;
+}
+
+
+.standardSpacing {
+	margin:20px 0px 20px 0px;	
+}
+
+.small_text{
+	font-size:70%;
+	}
+	
+.image_quiz{
+	padding:10px 10px 10px 5px;
+	}
+	
+.quiz_question{
+	color:#666666;	
+	font-style: bold;
+	font-size:180%;
+	padding:0px 0px 10px 10px;
+	line-height:150%;
+	
+	}
+	
+.quiz_responses{
+	color:#666666;	
+	font-style: bold;
+	font-size:80%;
+	padding:0px 0px 15px 130px;
+	line-height:150%;
+	
+	}
+	
+.quiz_statement{	
+	color:#666666;		
+	line-height:110%;
+	} 
+	
+.site_background {
+	background-color:#f2f2f2;
+	}	
+.question_frame {
+	margin:0px 0px 10px 20px;	
+	padding-top:10px;
+	padding-left:0px;
+	background-color:white;
+	width:470px;
+	height:auto;
+	clear:both;
+	border-right:1px solid #e3e3e3;
+	border-left:1px solid #e3e3e3;
+	border-bottom:1px solid #e3e3e3;	
+}	
+
+.question_top {
+	border-top:1px solid #e3e3e3;
+	border-right:1px solid #e3e3e3;
+	border-left:1px solid #e3e3e3;
+	background:transparent url(http://images.crowdscanner.com/skinny_dots.gif) repeat-x scroll center bottom;
+	margin:0px 0px 0px 20px;
+	background-color:white;
+	height:auto;
+	font-size:1.4em;
+	padding:10px 0px 10px 10px;
+	width:460px;
+	max-width:460px;
+}	
+
+.content_top {
+	float:left;
+	margin:0px;
+	padding-left:10px;
+	width:220px;
+	max-width:220px;	
+}
+
+.inner_question {
+	clear:both;
+	background-color:#F3F2F6;
+	margin:0px 0px 0px 60px;		
+}
+
+.inner_photo {
+	float:left;
+	margin:5px 5px 10px 10px;
+	max-width:75px;		
+}
+
+.inner_question_cont {
+	float:left;
+	margin:5px;
+	width:300px;
+	max-width:300px;		
+}
+
+.theusername {
+	font-size:1.0em;
+	font-weight:bold;
+	color:#ff0074;		
+}
+
+.tour-nav {
+	display:block;
+	float:left;
+	margin:0;
+	width:160px;
+}
+
+.tour-nav-content {
+	display:block;
+	float:none;
+	margin:0 0 0 160px;
+	width:470px;
+}
+
+
+.tour-header {
+	margin:0 0 1em;
+}
+
+.tour-links {
+	float:right;
+}
+
+.footer {
+	clear:both;
+}
+
+.tour-nav a, .tour-nav a:visited {
+	background:#FFFFFF none repeat scroll 0 0;
+	color:#008ECF;
+	display:block;
+	padding:10px 10px 10px 5px;	
+}
+
+.tour-nav ul {
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	width:140px;
+}
+
+.tour-nav li {
+	border-bottom:1px solid #CCCCCC;
+	line-height:normal;
+	margin:0;
+	padding:0;
+}
+
+.tour-nav li.selected {
+	
+	border-top:1px solid #CCCCCC;
+	border-left:1px solid #CCCCCC;
+	border-bottom:1px solid #CCCCCC;
+	padding:10px 10px 10px 5px;
+}
+
+.tour-nav a.selected {
+		
+}
+
+.tour-header h2 {
+	color:#cccccc;
+	font-size:1.3em;
+	padding:1px 0 8px;
+}
+
+.tour-links img {
+	margin:0 0 0 5px;
+	vertical-align:middle;
+}
+
+h2{
+	margin:0px 0px 0px 0px;
+}
+
+.textlinks{
+	font-size:19px;
+	font-family:helvetica;
+	line-height:120%;
+	}
+
+.textlinksBig{
+	font-size:30px;
+	font-family:helvetica;
+	line-height:120%;
+	}
+
+
+

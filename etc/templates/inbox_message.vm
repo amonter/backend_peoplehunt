@@ -1,0 +1,21 @@
+<html>
+<body>
+	<p>
+		${message.senderName} just sent you a message
+	</p>
+	<p>
+		---------------------<br>
+		${message.subject} 
+	</p>
+	<p>
+		To view the message, follow this link:
+	</p>
+	<p>
+		http://www.meetforeal.com/navigateprofile.do?tabselector=inbox
+	</p>
+	<p>
+			Come to our unique meetforeal events to learn something new, share your ideas and meet cool, interesting, 
+			people in real life, with themes and topics that you are most passionate about; and reconnect online. 
+	</p>
+</body>
+</html>

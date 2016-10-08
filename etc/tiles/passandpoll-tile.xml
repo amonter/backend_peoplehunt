@@ -1,0 +1,51 @@
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+       
+       
+ <tiles-definitions>	
+ 	<definition name="pass_front" template="/jsp/passandpoll/main_template.jsp">
+ 		<put-attribute name="title" value="CrowdScanner iphone app, satisfy your curiosity about what people around you are thinking, approach and have conversations with new people, meet new people, talk to strangers, face to face, gather cool statatistics and facts about an audience, polling, survey application for the iphone" />
+ 		<put-attribute name="description" value="This is Crowdscanner Iphone app, tool for social interaction" />	
+		<put-attribute name="main_content" value="/jsp/passandpoll/front.jsp" />		
+	</definition> 	
+	
+	<definition name="pass_the_profile" template="/jsp/passandpoll/main_template.jsp">
+ 		<put-attribute name="title" expression="${title}" />
+ 		<put-attribute name="description" value="We are Adrian Avendano and Ellen Dudley" />	
+		<put-attribute name="main_content" value="/jsp/passandpoll/view_profile.jsp" />		
+	</definition>
+	
+	<definition name="pass_view_theblog" template="/jsp/passandpoll/main_template.jsp">
+ 		<put-attribute name="title" expression="${title}" />	
+ 		<put-attribute name="description" expression="The Crowdscanner Blog, data, polls, iphone app approach new people" />
+		<put-attribute name="main_content" value="/jsp/passandpoll/blog/view_theblog.jsp" />		
+	</definition>
+	
+	<definition name="pass_view_theblogpost" template="/jsp/passandpoll/main_template.jsp">
+ 		<put-attribute name="title" expression="${title}" />	
+ 		<put-attribute name="description" expression="${description}" />
+		<put-attribute name="main_content" value="/jsp/passandpoll/blog/view_blogpost.jsp" />		
+	</definition>
+	
+	<definition name="pass_aboutus_crowd" template="/jsp/passandpoll/main_template.jsp">
+ 		<put-attribute name="title" value="Who's behind Crowdscanner" />
+ 		<put-attribute name="description" value="We are Adrian Avendano and Ellen Dudley" />	
+		<put-attribute name="main_content" value="/jsp/passandpoll/aboutus.jsp" />		
+	</definition>
+	
+	
+	<definition name="pass_howtouse" template="/jsp/passandpoll/main_template.jsp">
+ 		<put-attribute name="title" value="How to use it" />	
+ 		<put-attribute name="description" value="description use it" />
+		<put-attribute name="main_content" value="/jsp/passandpoll/howtouse.jsp" />		
+	</definition>
+	
+	<definition name="pass_howyoufeel" template="/jsp/passandpoll/main_template.jsp">
+ 		<put-attribute name="title" value="How you feel using it" />	
+ 		<put-attribute name="description" value="Description how you feel using it" />
+		<put-attribute name="main_content" value="/jsp/passandpoll/howyoufeel.jsp" />		
+	</definition>	
+	
+	
+ </tiles-definitions>      

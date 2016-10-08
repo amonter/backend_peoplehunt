@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+		xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+			http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+	<context:annotation-config/>
+    <context:component-scan base-package="com"/>
+	<tx:annotation-driven/>
+	
+	
+	 
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"> 
+		<property name="driverClassName">
+			<value>org.gjt.mm.mysql.Driver</value> 
+		</property> 
+		<property name="url">
+			<value>jdbc:mysql://127.0.0.1:3307/languagehunt</value>			
+		</property> 
+		<property name="username"> 
+			<value>firstuser</value>
+		</property> 
+		<property name="password"> 
+			<value>espana29</value>
+		</property> 
+		<property name="defaultAutoCommit" value="true" /> 
+	</bean>
+	
+	<!--	
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:mysql://localhost/meetforeal_motivate</value>
+		</property>
+		<property name="username">
+			<value>root</value>
+		</property>
+		<property name="password">
+			<value>root</value>
+		</property>
+	</bean>
+	 -->
+	
+	
+	<!--  
+	<bean id="mailSender"
+		class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="mail.meetforeal.com"/> 
+		<property name="username" value="ellen@crowdscanner.com"/> 
+		<property name="password" value="ellenhunnycakes"/>	
+		<property name="port" value="587"/>	
+	</bean>
+	-->
+	
+	<bean id="mailSender"
+		class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com"/> 
+		<property name="username" value="ellen@peoplehunt.me"/> 
+		<property name="password" value="dudleymont123"/>			
+		<property name="port" value="587"/>	
+		<property name="javaMailProperties">
+        	<props>
+            	<prop key="mail.smtp.auth">true</prop>
+            	<prop key="mail.smtp.starttls.enable">true</prop>
+            	<prop key="mail.smtp.timeout">15500</prop>
+        	</props>
+    	</property>
+	</bean>
+	
+	<bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+	      
+   	</bean>
+   	
+ 
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource">
+			<ref local="dataSource" />
+		</property>		
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.cache.use_second_level_cache">true</prop>
+				<prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>
+				<prop key="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</prop>
+			</props>
+		</property>
+		 <property name="annotatedClasses">
+		     <list>
+		       	<value>com.myownmotivator.model.profile.ProfileInfo</value>
+		      	<value>com.myownmotivator.model.profile.Profile</value>
+				<value>com.myownmotivator.model.User</value>
+				<value>com.myownmotivator.model.profile.File</value>
+				<value>com.myownmotivator.model.profile.TwitterUserAuthentication</value>
+				<value>com.myownmotivator.model.profile.LinkedInData</value>
+				<value>com.myownmotivator.model.profile.EfactorData</value>
+				<value>com.peoplehuntv2.model.Feeler</value>
+				<value>com.peoplehuntv2.model.FoundTarget</value>
+				<value>com.peoplehuntv2.model.Group</value>
+				<value>com.peoplehuntv2.model.MemberShip</value>
+				<value>com.peoplehuntv2.model.Status</value>
+				<value>com.peoplehuntv2.model.AsyncMessage</value>	
+				<value>com.peoplehuntv2.model.Notification</value>
+				<value>com.peoplehuntv2.model.Connection</value>	
+				<value>com.peoplehuntv2.model.Location</value>	
+				<value>com.peoplehuntv2.model.RoleLocation</value>																					       
+		     </list>
+   		</property>		
+	</bean>
+
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager"
+			p:sessionFactory-ref="sessionFactory"/>
+
+
+	<bean name="openSessionInViewInterceptor"
+		class="org.springframework.orm.hibernate3.support.OpenSessionInViewInterceptor">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>		
+	</bean>
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="messages" />
+	</bean>
+
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- one of the properties available; the maximum file size in bytes -->
+		<property name="maxUploadSize" value="1000000" />
+	</bean>
+
+
+	<bean id="methodNameResolver"
+		class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+		<property name="mappings">
+			<props>
+				<prop key="/getimage.do">uploadFile</prop>
+				<prop key="/getfileuploader.do">getFileUploader</prop>				
+			</props>
+		</property>
+	</bean>
+	
+	
+	<bean id="methodNameResolverForum"
+		class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+		<property name="mappings">
+			<props>			
+				<prop key="/retrieveforumposts.do">retrievePosts</prop>
+				<prop key="/retrieveforumthreads.do">retrieveThread</prop>
+				<prop key="/browseforums.do">retrieveForums</prop>
+				<prop key="/searchforums.do">searchForums</prop>
+				<prop key="/newpostforumpopup.do">createNewPost</prop>
+				<prop key="/replypostforumpopup.do">replyThread</prop>
+			</props>
+		</property>
+	</bean>
+		
+	<bean id="methodNameResolverNavigates"
+		class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+		<property name="mappings">
+			<props>			
+				<prop key="/navigateprofile.do">retrieveProfile</prop>			
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="methodNameResolverProfileController"
+		class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+		<property name="mappings">
+			<props>			
+				<prop key="/searchuserhome.do">searchProfile</prop>			
+				<prop key="/retrieveuserhome.do">retrieveProfile</prop>
+				<prop key="/sendmessageuserhome.do">sendMessageProfile</prop>
+				<prop key="/logoutuserhome.do">logout</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- Event Properties -->
+	<bean id="eventLogin" class="com.myownmotivator.model.UserLogin">
+    	<property name="userName" value="adrian.mont@gmail.com"/>  
+    	<property name="password" value="ellenhunnycakes" />	 
+    </bean>	
+
+	
+    
+	<bean class="com.myownmotivator.service.email.EmailMessageServiceImpl">
+		<qualifier value="userCreatedEmailService" />
+		<property name="mailSender" ref="mailSender" />
+		<property name="emailFactory" ref="userCreatedEmailFactory" />
+	</bean>
+	
+	<bean class="com.myownmotivator.service.email.EmailMessageServiceImpl">
+		<qualifier value="welcomeUserEmailService" />
+		<property name="mailSender" ref="mailSender" />
+		<property name="emailFactory" ref="welcomeUserEmailFactory" />
+	</bean>
+	
+	<bean class="com.myownmotivator.service.email.EmailMessageServiceImpl">
+		<qualifier value="userForgotPasswordService" />
+		<property name="mailSender" ref="mailSender" />
+		<property name="emailFactory" ref="userForgotPasswordEmailFactory" />
+	</bean>
+
+	<bean class="com.myownmotivator.service.email.EmailMessageServiceImpl">
+		<qualifier value="adminEmailService" />
+		<property name="mailSender" ref="mailSender" />
+		<property name="emailFactory" ref="emailAdminFactory" />
+	</bean>
+
+	<bean class="com.myownmotivator.service.email.EmailMessageServiceImpl">
+		<qualifier value="eventInvitationEmailService" />
+		<property name="mailSender" ref="mailSender" />
+		<property name="emailFactory" ref="eventInvitationEmailFactory" />
+	</bean>	
+	
+	<bean class="com.myownmotivator.service.email.EmailMessageServiceImpl">
+		<qualifier value="sendFeedbackEmailService" />
+		<property name="mailSender" ref="mailSender" />
+		<property name="emailFactory" ref="sendFeedbackEmailFactory" />
+	</bean>
+	
+	<bean class="com.myownmotivator.service.email.EmailMessageServiceImpl">
+		<qualifier value="sendInboxMessageService" />
+		<property name="mailSender" ref="mailSender" />
+		<property name="emailFactory" ref="sendInboxMessageFactory" />
+	</bean>
+	
+	<bean class="com.myownmotivator.service.email.EmailMessageServiceImpl">
+		<qualifier value="paymentNotificationService" />
+		<property name="mailSender" ref="mailSender" />
+		<property name="emailFactory" ref="paymentNotificationEmailFactory" />
+	</bean>
+	
+	<bean class="com.myownmotivator.service.email.EmailMessageServiceImpl">
+		<qualifier value="exceptionsEmailService" />
+		<property name="mailSender" ref="mailSender" />
+		<property name="emailFactory" ref="exceptionsEmailFactory" />
+	</bean>
+	
+	<bean class="com.myownmotivator.service.email.EmailMessageServiceImpl">
+        <qualifier value="crowdscannerUserCreated" />
+        <property name="mailSender" ref="mailSender" />
+        <property name="emailFactory" ref="crowdscannerUserCreatedEmailFactory" />
+    </bean>
+    
+     <bean class="com.myownmotivator.service.email.EmailMessageServiceImpl">
+        <qualifier value="huntBackgroundQueue" />
+        <property name="mailSender" ref="mailSender" />
+        <property name="emailFactory" ref="huntBackgroundQueueFactory" />
+    </bean>	
+	
+
+	<!-- Service Implementations -->
+	
+	<bean id="serviceUtils" class="com.myownmotivator.service.utils.ServiceUtils" />
+	
+
+</beans>

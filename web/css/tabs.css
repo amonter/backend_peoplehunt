@@ -1,0 +1,690 @@
+
+code {
+  font-size: small;
+}
+.gwt-BorderedPanel {
+}
+
+.gwt-Button {
+
+margin-left:120px;
+}
+
+.gwt-Canvas {
+}
+
+.gwt-CheckBox {
+  font-size: smaller;
+}
+
+.gwt-FileUpload {
+}
+
+.gwt-Frame {
+}
+
+.gwt-HorizontalSplitter .Bar {
+  width: 8px;
+  background-color: #C3D9FF;
+}
+
+.gwt-VerticalSplitter .Bar {
+  height: 8px;
+  background-color: #C3D9FF;
+}
+
+.gwt-HTML {
+  font-size:medium;
+  color:#666666;
+  font-weight:normal;
+}
+
+.gwt-Hyperlink {
+}
+
+.gwt-Image {
+}
+
+.gwt-Label {
+  font-size: smaller; 
+}
+
+.gwt-ListBox {
+}
+
+.gwt-MenuBar {
+  background-color: #C3D9FF;
+  border: 1px solid #87B3FF;
+  cursor: default;
+}
+
+.gwt-MenuBar .gwt-MenuItem {
+  padding: 1px 4px 1px 4px;
+  font-size: smaller;
+  cursor: default;
+}
+
+.gwt-MenuBar .gwt-MenuItem-selected {
+  background-color: #E8EEF7;
+}
+
+.gwt-PasswordTextBox {
+}
+
+.gwt-RadioButton {
+  font-size: smaller;
+}
+
+.gwt-TabPanel
+ {
+     width                      :    670px;
+      
+ }
+.gwt-TabPanelBottom
+ {
+     background-color           :    white;
+     border-left                :    1.5px solid #0577BD;
+     border-right               :    1.5px solid #0577BD;
+     border-top					:	 1.5px solid #0577BD;	
+     height                     :    698px;
+     border-bottom              :    1.5px solid #0577BD;}
+     
+ .gwt-TabBar
+ {
+     
+     margin-top                 :    15px;
+     background-color           :    white;
+     height                     :    100%;}
+
+ .gwt-TabBar .gwt-TabBarItem
+ {
+     background-image: url(../images/unselected_tab.png);
+     width						:    92px;
+     color                      :    #0577BD;
+     text-align					:    center;
+     font-size                  :    12px;
+     margin-right				:    1px; 
+	 margin-left				:    1px;   
+     font-family				:    maiandra GD;
+     padding                    :    6px 0px 6px 0px;
+     cursor                     :    pointer;
+     cursor                     :    hand;}
+
+
+ .gwt-TabBar .gwt-TabBarItem-selected 
+ {
+     color                     	:    white;
+     background-image			:    url(../images/tab.png);
+     font-weight                :    bold;
+     margin-left				:    1px; 
+     margin-right				:    1px;   
+     padding                    :    6px 0px 6px 0px;
+     cursor                     :    default;
+
+}
+
+
+.gwt-TextArea {
+	
+}
+
+.gwt-TextBox {
+}
+
+.gwt-Tree {
+}
+
+.gwt-Tree .gwt-TreeItem {
+  font-size: smaller;
+}
+
+.gwt-Tree .gwt-TreeItem-selected {
+  background-color: #C3D9FF;
+}
+
+.gwt-StackPanel {
+}
+
+.gwt-StackPanel .gwt-StackPanelItem {
+  background-color: #C3D9FF;
+  cursor: pointer;
+  cursor: hand;
+}
+
+.gwt-StackPanel .gwt-StackPanelItem-selected {
+}
+
+/* -------------------------------------------------------------------------- */
+.ks-Sink {
+  border: 8px solid #C3D9FF;
+  background-color: #E8EEF7;
+  width: 100%;
+  height: 24em;
+}
+
+.ks-Info {
+  background-color: #C3D9FF;
+  padding: 10px 10px 2px 10px;
+  font-size: smaller;
+}
+
+.ks-List {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: smaller;
+}
+
+.ks-List .ks-SinkItem {
+  width: 100%;
+  padding: 0.3em;
+  padding-right: 16px;
+  cursor: pointer;
+  cursor: hand;
+}
+
+.ks-List .ks-SinkItem-selected {
+  background-color: #C3D9FF;
+}
+
+.ks-images-Image {
+  margin: 8px;
+}
+
+.ks-images-Button {
+  margin: 8px;
+  cursor: pointer;
+  cursor: hand;
+}
+
+.ks-layouts {
+  margin: 8px;
+}
+
+.ks-layouts-Label {
+  background-color: #C3D9FF;
+  font-weight: bold;
+  margin-top: 1em;
+  padding: 2px 0px 2px 0px;
+  width: 100%;
+}
+
+.ks-layouts-Scroller {
+  height: 128px;
+  border: 2px solid #C3D9FF;
+  padding: 8px;
+  margin: 8px;
+}
+
+.ks-popups-Popup {
+  font-size:14px;		
+  font-weight: bold;	
+  background-color: #C3D9FF;
+  border: 1px solid #87B3FF;
+  padding: 4px;
+  z-index:4;
+}
+
+.infoProse {
+  margin: 8px;
+}
+
+
+#tagcloud
+{
+	
+		font-size:12px;
+		font-family:Arial,Helvetica,sans-serif;
+		background:#F5F5F5 none repeat scroll 0%;
+		border:1px solid #EEEEEE;
+		padding:15px
+		
+	
+}
+	
+#cloudbox
+{
+	
+	width:550px;
+	height:250px;
+	
+}
+	
+.my-tooltip 
+{  
+	text-align : center;
+    border: 2px solid #87B3FF;
+    background-color: #C3D9FF;
+    font-size :12px;    
+    font-family : maiandra GD;
+    
+}
+   .my-tooltip .my-tooltip-title {  
+    
+    
+   }
+   
+   
+   .my-tooltip .my-tooltip-text {  
+   
+   
+   
+   
+   }
+   
+ /* demo pop up */  
+   
+#screen
+{
+    height                      :    100%;
+    width                       :    100%;
+    overflow                    :    scroll;
+    /* stop absolutepanels failing to scroll */
+    position                    :    relative;
+}
+
+
+/************************mail************************************/
+
+
+.mail-TopPanel {
+  height: 60px;
+}
+
+.mail-TopPanel table {
+  font-size: 80%;
+}
+
+.mail-TopPanel .gwt-Image {
+  margin-left: 10px;
+  position: absolute;
+}
+
+.mail-TopPanelLinks {
+  font-size: 80%;
+}
+
+.mail-AboutText {
+  width: 24em;
+  font-size: 80%;
+  padding: 10px;
+  text-align: left;
+}
+
+.mail-Contacts td, .mail-Tasks td {
+  padding: 4px 0 0 0;
+}
+
+.mail-Contacts table {
+  font-size: 80%;
+}
+
+.mail-Tasks table {
+  font-size: 80%;
+}
+
+.mail-List {
+  border-left: 1px solid #666;
+  border-right: 1px solid #666;
+  border-bottom: 1px solid #666;
+  font-size: 80%;
+  cursor: pointer;
+  cursor: hand;
+}
+
+.mail-List td {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  padding: 2px 0 2px 10px;
+}
+
+.mail-ListHeader td {
+  border-top: none;
+}
+
+.mail-ListHeader {
+  background: #DFDFC3 url(../images/gradient.gif) repeat-x 0px 0px;
+  font-weight: bold;
+}
+
+.mail-ListHeader .mail-ListNavBar .gwt-HTML {
+  font-weight: bold;
+}
+
+.mail-ListHeader td {
+  padding: 2px 0 2px 10px;
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
+}
+
+.mail-ListNavBar table {
+  font-size: 80%;
+}
+
+.mail-ListNavBar td {
+  border: none;
+}
+
+.mail-ListNavBar a {
+  margin: 0 8px;
+}
+
+.mail-SelectedRow td {
+    
+}
+
+.mail-SelectedRow {
+  background: #eee;
+}
+
+
+.mail-SelectedRowUnread td {
+ 
+ 
+}
+
+.mail-SelectedRowUnread {
+  background: #DEECFD none repeat scroll 0 0;
+}
+
+
+.mail-Toolbar .gwt-Image {
+}
+
+.mail-ToolButton {
+  font-size: 80%;
+  width: 10em;
+}
+
+.mail-Detail {
+  border: 1px solid #666;
+  margin-top: 4px;
+}
+
+.mail-DetailHeader {
+  background: #eee;
+  border-bottom: 1px solid #666;
+  padding: 6px 4px;
+}
+
+.mail-DetailHeader td {
+  padding: 0;
+}
+
+.mail-DetailInner {
+  background-color: white;
+  font-size: 100%;
+}
+
+.mail-DetailSubject {
+  padding: 2px 10px;
+  font-weight: bold;
+}
+
+.mail-DetailSender {
+  font-size: 80%;
+  padding: 2px 10px;
+}
+
+.mail-DetailRecipient {
+  font-size: 80%;
+  padding: 2px 10px;
+}
+
+.mail-DetailBody {
+  line-height: 150%;
+  padding: 20px 40px 20px 10px;
+  font-family: 'Times New Roman', Times, serif;  
+  
+}
+
+.mail-ContactPopup {
+  background: #fff;
+  border: 1px solid #666;
+  padding: 4px;
+}
+
+.mail-ContactPopupName {
+  font-size: 80%;
+  font-weight: bold;
+}
+
+.mail-ContactPopupEmail {
+  font-size: 80%;
+  font-style: italic;
+}
+
+.mail-StackContent {
+  height: 100%;
+  padding: 0 0.5em;
+  border-left: 1px solid #666;
+  border-right: 1px solid #666;
+}
+
+.mail-Contacts {
+  border-bottom: none;
+}
+
+
+.send_invitation {
+  font-size:14px;
+  padding:5px 5px 10px 3px;
+}
+
+
+.send_invitation_label {
+  font-size:12px;
+  padding:5px 3px 5px 3px;
+}
+
+.form_panel_div {
+  padding:5px 3px 5px 3px;	
+
+}
+
+.inbox_box td { 
+   border-bottom: 1px solid #DDDDDD;	
+}
+
+.reply_button {
+ 	 margin:20px 20px 20px 370px;
+
+}
+
+.underline {
+	color:#0000CC;	
+}
+.underline:hover {
+	text-decoration:underline;
+	cursor:pointer;
+}
+
+.gwt-DialogBox {
+	 z-index:8;	
+}
+
+.gwt-DialogBox .Caption {
+  background: #e3e8f3 url(../images/hborder.png) repeat-x 0px -2003px;
+  padding: 4px 4px 4px 8px;
+  cursor: default;
+  border-bottom: 1px solid #bbbbbb;
+  border-top: 5px solid #d0e4f6;
+ 
+}
+
+.gwt-DialogBox .dialogContent {
+}
+
+.gwt-DialogBox .dialogMiddleCenter {
+  padding: 3px;
+  background: white;
+}
+
+.gwt-DialogBox .dialogMiddleLeft {
+  background: url(../images/vborder.png) repeat-y;
+}
+
+.gwt-DialogBox .dialogTopLeftInner {
+  width: 5px;
+  zoom: 1;
+}
+
+.gwt-DialogBox .dialogTopRightInner {
+  width: 8px;
+  zoom: 1;
+}
+
+.gwt-DialogBox .dialogBottomLeftInner {
+  width: 5px;
+  height: 8px;
+  zoom: 1;
+}
+
+.gwt-DialogBox .dialogBottomRightInner {
+  width: 5px;
+  height: 8px;
+  zoom: 1;
+}
+
+html>body .gwt-DialogBox .dialogBottomCenter {
+  background: url(../images/hborder.png) repeat-x 0px -4px;
+}
+
+html>body .gwt-DialogBox .dialogMiddleRight {
+  background: url(../images/vborder.png) repeat-y -4px 0px;
+}
+
+html>body .gwt-DialogBox .dialogTopLeft {
+  background: url(../images/corner.png) no-repeat -13px 0px;
+}
+
+html>body .gwt-DialogBox .dialogTopRight {
+  background: url(../images/corner.png) no-repeat -18px 0px;
+}
+
+html>body .gwt-DialogBox .dialogBottomLeft {
+  background: url(../images/corner.png) no-repeat 0px -15px;
+}
+
+html>body .gwt-DialogBox .dialogBottomRight {
+  background: url(../images/corner.png) no-repeat -5px -15px;
+}
+* html .gwt-DialogBox .dialogBottomCenter {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/ie6/hborder_blue_shadow.png',sizingMethod='scale');
+}
+
+* html .gwt-DialogBox .dialogMiddleRight {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/ie6/vborder_blue_shadow.png',sizingMethod='scale');
+}
+
+* html .gwt-DialogBox .dialogTopLeft {
+  width: 5px;
+  overflow: hidden;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/ie6/corner_dialog_topleft.png',sizingMethod='crop');
+}
+
+* html .gwt-DialogBox .dialogTopRight {
+  width: 8px;
+  overflow: hidden;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/ie6/corner_dialog_topright.png',sizingMethod='crop');
+}
+
+* html .gwt-DialogBox .dialogBottomLeftInner {
+  width: 5px;
+  height: 23px;
+  margin-top: -15px;
+  overflow: hidden;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/corner.png',sizingMethod='crop');
+}
+
+* html .gwt-DialogBox .dialogBottomRightInner {
+  width: 13px;
+  height: 23px;
+  margin-left: -5px;
+  margin-top: -15px;
+  overflow: hidden;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/corner.png',sizingMethod='crop');
+}
+
+.cw-DialogBox {
+}
+
+.gwt-RichTextToolbar {
+  background: #e3e8f3 url(../images/hborder.png) repeat-x 0px -2003px;
+  border-bottom: 1px solid #BBBBBB;
+  padding: 3px;
+  margin: 0px;
+}
+
+.gwt-RichTextToolbar .gwt-PushButton-up {
+  padding: 0px 1px 0px 0px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  border-width: 1px; 
+}
+
+.gwt-RichTextToolbar .gwt-PushButton-up-hovering {
+  margin-right: 4px;
+  margin-bottom: 4px;
+  padding: 0px 1px 0px 0px;
+  border-width: 1px; 
+}
+
+.gwt-RichTextToolbar .gwt-PushButton-down {
+  margin-right: 4px;
+  margin-bottom: 4px;
+  padding: 0px 0px 0px 1px;
+  border-width: 1px; 
+}
+
+.gwt-RichTextToolbar .gwt-PushButton-down-hovering {
+  margin-right: 4px;
+  margin-bottom: 4px;
+  padding: 0px 0px 0px 1px;
+  border-width: 1px; 
+}
+
+.gwt-RichTextToolbar .gwt-ToggleButton-up {
+  margin-right: 4px;
+  margin-bottom: 4px;
+  padding: 0px 1px 0px 0px;
+  border-width: 1px;
+}
+
+.gwt-RichTextToolbar .gwt-ToggleButton-up-hovering {
+  margin-right: 4px;
+  margin-bottom: 4px;
+  padding: 0px 1px 0px 0px;
+  border-width: 1px;
+}
+
+.gwt-RichTextToolbar .gwt-ToggleButton-down {
+  margin-right: 4px;
+  margin-bottom: 4px;
+  padding: 0px 0px 0px 1px;
+  border-width: 1px;
+}
+
+.gwt-RichTextToolbar .gwt-ToggleButton-down-hovering {
+  margin-right: 4px;
+  margin-bottom: 4px;
+  padding: 0px 0px 0px 1px;
+  border-width: 1px;
+}
+
+.cw-RichText {
+  border: 1px solid #BBBBBB;
+  border-spacing: 0px;
+  background: white;
+}
+
+.input_type_new {
+	background:#FBFBFB none repeat scroll 0 0;
+	border:1px solid #E5E5E5;
+	font-size:24px;
+	margin-bottom:16px;
+	margin-right:6px;
+	margin-top:2px;
+	padding:3px;
+	width:97%;	
+	
+}

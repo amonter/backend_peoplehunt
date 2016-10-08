@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <script type="text/javascript" src="http://images.crowdscanner.com/jquery-1.4.2.min.js"></script>
+   <script src="http://images.crowdscanner.com/processing-0.9.7.min.js"></script>    
+   <title>Crowd Visualisation</title>
+</head>
+<body>
+<div style="padding:10px 10px 10px 20px; font-color:black;font-size:20px;text-align:center; font-family:helvetica;">Who was there: Ignite the West, Galway, 10th September, 2010</div>
+
+<script type="application/processing" target="theCanvas">
+
+Connectors l1;
+float radius = 30;
+float[] x = new float[]; 
+float[] y = new float[];
+float[] d = new float[];
+HashMap losImage = new HashMap();
+
+int maxSize = 60;
+int minSize = 50;
+
+int numOfUsers = theData.length;
+
+float [][] e = new float [numOfUsers][15];
+float ds = 2;
+int sel = 0;
+int change = 0;
+int num = 0;
+float[] textLength = new float[5];
+float[] xpos = new float[5];
+float spring = 0.01;
+boolean dragging = false;
+
+void mouseDragged(){
+	dragging = true;
+}
+
+void mouseReleased(){
+	dragging = false;
+	}
+	
+void setup(){
+	
+	size(screen.width*3, 2080);
+	frameRate(15);
+	smooth();
+	strokeWeight(2);
+	for (int i = 0; i<numOfUsers; i++){
+		 
+		PImage anImage = loadImage(theData[i].urlImage);
+		losImage.put(theData[i].profileId, anImage);				  
+		//println(urlImage+"urlImage");
+	}
+	//positions
+	for (int i = 0; i<numOfUsers; i++){
+		float radius = 2.0;
+	    	for (int deg = 0; deg<theData.length; deg ++){
+			float angle = radians(deg*100);
+			float f = 750 + (cos(angle) * radius)*100;
+			float g = 400 + (sin(angle) * radius)*80;
+			//ellipse (f, g, 6, 6);
+			radius = radius+0.2;
+			x [deg]= f;
+			y [deg]= g;
+		}
+	}
+	
+	//initialise the circles - as many as the data length, and their sizes
+	for (int j = 0; j<numOfUsers; j++){
+		e[j][0] = x[j]; //X
+		e[j][1] = y[j]; //Y
+		e[j][2] = random(minSize, maxSize); //radius
+		e[j][3] = random(-.2, .2); //x speed
+		e[j][4] = random(-.2, .2); //y speed
+		e[j][5]=e[j][0];//q1 circle that floats around it y = 0
+    		e[j][6]=e[j][1]-(e[j][2]/1.7)-(e[j][2]/4);
+    		e[j][7]=e[j][0]+(e[j][2]/1.7)+(e[j][2]/6);//q2 circle that floats around it
+    		e[j][8]=e[j][1]-(e[j][2]/1.7)+(e[j][2]/6);
+    		e[j][9]=e[j][0]-(e[j][2]/1.7)-(e[j][2]/6);//q3 circle that floats around it
+    		e[j][10]=e[j][1]-(e[j][2]/1.7)+(e[j][2]/6);
+    		e[j][11]=e[j][0]-(e[j][2]/1.7)+(e[j][2]/6);//q4 circle that floats around it
+    		e[j][12]=e[j][1]+(e[j][2]/1.7)+(e[j][2]/6);
+    		e[j][13]=e[j][0]+(e[j][2]/1.7)-(e[j][2]/6);//q5 circle that floats around it
+    		e[j][14]=e[j][1]+(e[j][2]/1.7)+(e[j][2]/6);	
+	}
+	PFont font1;
+	font1 = loadFont("Arial");
+	textFont(font1);
+	textSize(18);
+}
+
+void draw(){
+	background(51, 51, 51);
+
+		HashMap aHashMap = new HashMap();
+		for (int b = 0; b<theData.length; b++){
+			aHashMap = insertToHash(x,y,theData,d);
+			//println(e[b][0]);
+		}
+		drawConnections(theData);
+		}	
+
+class Connectors{
+  float x1, y1, x2, y2;
+  int thick, gray;
+  float rad1;
+  float rad2;
+  
+  Connectors(float xpos1, float ypos1, float xpos2, float ypos2, int t, int g, float radius1, float radius2){
+  	x1 = xpos1;
+    	y1 = ypos1;
+    	x2 = xpos2;
+    	y2 = ypos2;
+    	thick = t; 
+    	gray = g; 
+    	rad1=radius1;
+    	rad2=radius2;
+  }
+  
+ void update1(){
+ 
+    	float angle = atan2(y2-y1, x2-x1);
+    	float distance = dist(x1, y1, x2, y2);
+    	pushMatrix();
+    	translate(x1, y1);
+    	rotate(angle);
+    	//strokeWeight(t);
+      	stroke(255, 100);
+      	line( rad1, 0, distance/2, 0 );
+      	strokeWeight(1);
+      	fill(255, 100)
+	rectMode (CENTER);
+	rect(distance/2, 0, 2, 2 );
+    	popMatrix();
+    	}
+}
+
+function ArraySubtract(ara1,index) {
+   	var aRes = new Array();
+   	for(var i=0;i<ara1.length;i++) {
+     		if(i != index) {
+       			aRes.push(ara1[i]) ;
+     		}
+   	}
+   	return aRes;
+}
+
+HashMap insertToHash(float  x,float y , Array theArray, float d) {
+	
+	HashMap theHash = new HashMap();
+	for(i=0;i < theArray.length; i++) {
+		String theKey = theArray[i].profileId;
+		String theName = theArray[i].name;
+		Array anArray = new Array[4];
+		anArray[0] = x[i];
+		anArray[1] = y[i];
+		anArray[2] = theName;
+		anArray[3] = d[i]
+		//println(' x equals: '+x[i]+' y equals:'+y[i]);
+		theHash.put(theKey, anArray);			
+	}
+	return theHash;	
+ 		
+}
+
+void drawConnections(Array theData){
+	
+	for (int j = 0; j<numOfUsers; j++){
+		float radi = e[j][2];
+		float diam = radi/2;
+		
+		//when hover over image
+		if (dist(e[j][0], e[j][1], mouseX, mouseY)<radi){
+		  	//style
+		  	strokeWeight(4);
+		  	stroke(255);
+		  	fill(255);
+		  	rectMode (CENTER);
+		 	//draw white outer rect
+		  	rect(e[j][0], e[j][1], 84, 84);
+			//put image in centre
+		  	imageMode (CENTER);
+		  	PImage theImage = losImage.get(theData[j].profileId);
+			image(theImage, e[j][0], e[j][1], 80, 80);
+			//get data
+			//String theName= (theData[j].name);
+			//float smallBoxLength = textWidth(theName);
+			rectMode (CORNER);
+			strokeWeight(12);
+			stroke(255);
+			strokeJoin(ROUND);
+			strokeWeight(2);
+			sel = 1; 
+			if(dragging){
+				e[j][0] = mouseX;
+				e[j][1] = mouseY;
+			}
+		}else{
+			//style
+			strokeWeight(2);
+			stroke(255);
+			//draw outer rectangle
+			rectMode (CENTER);
+			rect(e[j][0], e[j][1], radi , radi);		  
+			//put image in centre
+			imageMode (CENTER);
+			PImage theImage = losImage.get(theData[j].profileId);
+			image(theImage, e[j][0], e[j][1], radi-2, radi-2);
+			//fill(255, 0);
+			//strokeWeight(2);
+			//ellipse(e[j][0], e[j][1], radi+2, radi+2);
+			//stroke(51,51, 51);
+			//strokeWeight(diam/2);
+			//ellipse(e[j][0], e[j][1], radi+10, radi+10);
+			//stroke(255);
+			//strokeWeight(3);
+			//ellipse(e[j][0], e[j][1], radi+2, radi+2);
+			//strokeWeight(2);
+			//stroke(255);
+			sel = 0;
+		}
+		if((e[j][0] > width-diam)||(e[j][0] < diam)){
+		 	e[j][3] = e[j][3]*-1;
+		}
+		if((e[j][1] > height-diam)||(e[j][1] < diam)){
+		  	e[j][4] = e[j][4]*-1;
+		}
+		for (int i = j+1; i < numOfUsers; i++){
+		      	float dx = e[i][0] - e[j][0];
+		      	float dy = e[i][1] - e[j][1];
+		      	float distance = sqrt(dx*dx + dy*dy);
+		      	float minDist = e[i][2] + diam*2;
+			//println(minDist);
+			if (distance < minDist) { 
+				float angle = atan2(dy, dx);
+				float targetX = e[j][0] + cos(angle) * minDist;
+				float targetY = e[j][1] + sin(angle) * minDist;
+				float ax = (targetX - e[i][0]) * spring;
+			        float ay = (targetY - e[i][1]) * spring;
+			        e[j][3] -= ax;
+			        e[j][4] -= ay;
+			        e[i][3] += ax;
+			        e[i][4] += ay;    
+	  	        }
+		} 
+		
+
+		
+		int y=5; 
+		var theOtherArray = theData[j].matchFinalQuestions;
+		for(int k=0;k<5; k++){	
+			
+			var numOfAnswersLikeMe = theOtherArray[k].numberMatch +1;
+      			int diameterOfCircle = int(numOfAnswersLikeMe*120/numOfUsers);
+      			chooseColour(k);
+			//if(k ==3){
+				//println(j +" " +theData[j].profileId+" "+ diameterOfCircle +" "+ numOfAnswersLikeMe +" " + theOtherArray[k].numberMatch);
+      			//}
+			//if(j ==3){
+			//	if(k==0){
+			//		println(numOfAnswersLikeMe);
+			//	}
+			//}
+			ellipse(e[j][y],e[j][y+1],diameterOfCircle,diameterOfCircle);
+			if(dist(e[j][y],e[j][y+1], mouseX, mouseY)<diameterOfCircle){
+                                String status= (theOtherArray[k].selectedAnswer);
+                                float boxLength = textWidth(status);
+                                //println(theOtherArray[k].questionDescription);
+                                rectMode (CENTER);
+                                strokeWeight(1);
+                                stroke(255);
+                                strokeJoin(ROUND);
+                                chooseColour(k);
+                                rect(e[j][y], e[j][y+1], boxLength+10, 20);
+                                fill(255);
+                                textSize(16);
+                                text(status, e[j][y]-(boxLength/2), e[j][y+1]+5);
+                        }
+			y=y+2;
+    		}
+  		fill(123,243,34);
+    		// Draw circle
+    		//ellipse(e[j][0],e[j][1],radi,radi);
+		//move circle
+		e[j][2] = radi + random(sin( frameCount / 4 )); 
+		e[j][0]+=e[j][3];
+		e[j][1]+=e[j][4];
+		e[j][5]+=e[j][3];
+    		e[j][6]+=e[j][4];
+    		e[j][7]+=e[j][3];
+    		e[j][8]+=e[j][4];
+    		e[j][9]+=e[j][3];
+    		e[j][10]+=e[j][4];
+    		e[j][11]+=e[j][3];
+    		e[j][12]+=e[j][4];
+    		e[j][13]+=e[j][3];
+    		e[j][14]+=e[j][4];							
+		x[j] = e[j][0];
+		y[j] = e[j][1];
+		d[j] = e[j][2];
+	}
+}
+void chooseColour(int k){
+  switch(k) {
+      case 0: 
+        strokeWeight(0);
+	fill(0,0,255,176);
+        //println("Zero");  // Does not execute
+        break;
+      case 1: 
+        strokeWeight(0);
+	fill(0,255,127,176);
+        //println("One");  // Prints "One"
+        break;
+      case 2: 
+        strokeWeight(0);
+	fill(255,255,0,176);
+        //println("One");  // Prints "One"
+        break;
+      case 3: 
+        strokeWeight(0);
+	fill(255,140,0,176);
+        //println("One");  // Prints "One"
+        break;
+      case 4: 
+ 	strokeWeight(0);
+        fill(153,50,204,176);
+       // println("One");  // Prints "One"
+        break;
+      }
+}
+</script><canvas width="600" height="600" id ="theCanvas"></canvas></p>
+<div style="height:0px;width:0px;overflow:hidden;"></div>
+
+
+
+<script type="text/javascript">
+var theData;
+
+$(document).ready(function(){  
+	
+	  
+ 	$.getJSON('/crowdscanner_dev/rest/bubblebyuser/12', function(data) {
+		 	theData = data;
+			  
+			var scripts = document.getElementsByTagName("script");					
+
+		    	var canvas;
+		    	for (var i = 0, j = 0; i < scripts.length; i++) {
+		      	if (scripts[i].type == "application/processing") {
+		       
+			      	var secondCanvas = $('canvas#theCanvas').get(0);
+		          	new Processing(secondCanvas, scripts[i].text);          
+		        }
+		          
+		     }			 	
+		 	
+	}); 
+});
+
+
+
+
+
+
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1869004-4']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+<body>
+	<p>
+		Hey ${user.lastName}
+	</p>
+	<p>
+		Welcome from Ellen & Adrian, founders of meetforeal.com. 
+	</p>
+	<p>
+		We spent a long time developing meetforeal, trying to find the solution to a problem that we found in life:
+		<ul>
+			<li>How can you connect and have interesting conversations with people you just met in your city?</li>
+			<li>How can you step outside of the "shoulds" and "shouldnts" and "cans" and "couldnts" of the etiquette surrounding meeting someone for the first time?</li>
+			<li>How can you learn from yourself and from others?</li>
+			<li>How can you have a unique experience, and meet really interesting people?</li>				
+		</ul>
+	</p>
+	<p>		
+		<div>
+			So it is a passion of ours and we want you to have <b>fun</b>
+		</div>
+		<div>
+		So we have designed <b>themed events</b> with specific <b>topics</b> and <b>experts</b>.  Check them out <a target="_blank" href="http://www.meetforeal.com/browseevents.do">http://www.meetforeal.com/browseevents.do</a>
+		</div>	
+	</p>
+	<p>
+		<div>
+			We are excited about meeting you at an event that you are passionate about!
+		</div>
+		Adrian & Ellen<br>
+		Meetforeal Founders<br>
+		<a href="mailto:adrian@meetforeal.com">adrian@meetforeal.com</a><br>		
+		<a href="mailto:ellen@meetforeal.com">ellen@meetforeal.com</a><br>	
+	</p>
+</body>
+</html>

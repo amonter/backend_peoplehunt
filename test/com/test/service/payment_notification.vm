@@ -1,0 +1,38 @@
+<html>
+<body>
+	<p>
+		Hi ${order.cart.profile.user.userName}.
+	</p>
+	<p>
+		You booking of the following events is ${order.status}.	<br>
+		On the ${order.formattedOrderDate}.
+	</p>
+	<p>	
+		---------------------
+	</p>	
+	<p>
+		<table>
+			<tr>
+				<th>Quantity</th>
+				<th>Event</th>
+				<th>Location</th>
+				<th>Prize</th>
+			</tr>
+			#foreach($orderItem in $order.orderItems)
+				<tr>
+			    	<td>$orderItem.quantity</td>
+			    	<td>$orderItem.itemName</td>
+			    	<td>$orderItem.location</td>
+			    	<td>$orderItem.price</td>			    	
+			    </tr>
+			#end							
+		</table>
+	</p>
+	<p>
+		Total: ${order.total}
+	</p>	
+	<p>
+		Why meetforeal is great.
+	</p>
+</body>
+</html>

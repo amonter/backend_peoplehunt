@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:p="http://www.springframework.org/schema/p" 
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:flow="http://www.springframework.org/schema/webflow-config"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	   		http://www.springframework.org/schema/webflow-config
+			http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.0.xsd
+	   		http://www.springframework.org/schema/context 
+	   		http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	
+	<context:annotation-config/>   
+	
+	<context:component-scan base-package="com.myownmotivator" use-default-filters="false">
+  		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>	
+    
+    <import resource="webflow-config.xml" />
+    
+	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="org.springframework.dao.DataAccessException">dataAccessFailure</prop>
+				<prop key="org.springframework.transaction.TransactionException">dataAccessFailure</prop>
+			</props>
+		</property>
+	</bean>
+    
+    <bean id="createVideo" class="com.myownmotivator.web.controllers.administration.VideoController">
+    </bean>
+    
+	<!-- Profile Controllers -->
+	<bean id="editProfileUserController" class="com.myownmotivator.web.controllers.profile.EditProfileController">
+    	<property name="userService">
+    		<ref bean="UserService"/>
+    	</property>   
+    </bean>
+    
+	<bean id="profileControllerMultiAction" class="com.myownmotivator.web.controllers.profile.ProfileController">
+    	<property name="profileService" ref="profileService"/>    	
+    	<property name="eventService" ref="eventService"/>
+    	<property name="methodNameResolver" ref="methodNameResolverProfileController" />  	 	
+    </bean>
+	
+    <bean id="createUserController" class="com.myownmotivator.web.controllers.profile.CreateUserController">
+    	<property name="userService">
+    		<ref bean="UserService"/>
+    	</property>
+    	<property name="selectedRole" value="member" />   
+    </bean> 
+    
+    <bean id="createVideoController" class="com.myownmotivator.web.controllers.administration.VideoController">
+    </bean>  
+    
+    <bean id="createPresenterController" class="com.myownmotivator.web.controllers.profile.CreatePresenterController">
+    	<property name="userService">
+    		<ref bean="UserService"/>
+    	</property>
+    	<property name="selectedRole" value="member" />   
+    </bean>    
+    
+     <bean id="editUserPasswordController" class="com.myownmotivator.web.controllers.profile.EditPasswordController">
+    	<property name="userService">
+    		<ref bean="UserService"/>
+    	</property>   
+    </bean>
+  
+    <!-- Login Controllers -->
+    <bean id="loginController" class="com.myownmotivator.web.controllers.profile.LoginController">
+    	<property name="userService" ref="UserService" />
+    	<property name="fileService" ref="FileService" />
+    	<property name="postService" ref="PostService"/>
+    	<property name="configService" ref="ConfigService"/>     
+    </bean>    
+    
+     <bean name="/loginplugin.do" class="com.myownmotivator.web.filters.LoginPlugInController">
+    	<property name="userService" ref="UserService" />
+    	<property name="messageService" ref="messageService" />
+    	<property name="basePathValidation" ref="rolePathValidator" />    	
+    </bean>
+    
+    <!-- File Controllers -->
+    <bean id="uploadFileController" class="com.myownmotivator.web.controllers.file.FileUploaderController" >
+         <property name="profileService" ref="profileService"/>    	
+    </bean>    
+    
+      <!-- Forum Controllers -->
+    <bean id="createForumPost" class="com.myownmotivator.web.controllers.forum.CreatePostController" >
+        <property name="forumService" ref="forumService"/>    	
+    </bean>
+    
+     <bean id="createForumThread" class="com.myownmotivator.web.controllers.forum.CreateThreadController" >
+        <property name="postService" ref="PostService"/>    	
+    </bean>         
+       
+    <bean id="forumController" class="com.myownmotivator.web.controllers.forum.ForumController">
+        <property name="profileService" ref="profileService"/>  
+        <property name="forumService" ref="forumService"/>
+        <property name="postService" ref="PostService"/>
+        <property name="methodNameResolver" ref="methodNameResolverForum" />  	    	
+    </bean>        
+    	
+    
+    <!-- AJAX GWT Controllers -->
+    <bean name="/*/*/ajaxgetprofile.do" class="com.myownmotivator.client.impl.GWTServiceImpl">
+			<property name="userService" ref="UserService" />
+			<property name="goalsService" ref="GoalsService" />
+			<property name="postService" ref="PostService"/>
+			<property name="messageService" ref="messageService"/>			
+	</bean>
+	
+	<!-- Navigation Controllers -->
+	<bean id="navigationController" class="com.myownmotivator.web.controllers.tabs.NavigationController">
+    	<property name="profileService" ref="profileService"/> 
+    	<property name="eventService" ref="eventService"/> 
+    	<property name="configService" ref="ConfigService"/>         	 
+    	<property name="methodNameResolver" ref="methodNameResolverNavigates" />	 
+    </bean>		
+	
+	<!--Filter Interceptors	--> 
+	
+	<bean id="securityMapper" class="org.springplugins.web.SelectedAnnotationHandlerMapping">
+		<property name="order">
+			<value>0</value>
+		</property>
+		<property name="urls">
+			<list>
+				<value>/checkout.do</value>
+				<value>/updateprofilepresenter.do</value>					
+			</list>
+		</property>
+		<property name="interceptors">
+			<list>
+		    	<ref bean="openSessionInViewInterceptor"/>         
+			</list>
+		</property>
+	</bean> 
+	
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" >
+  		<property name="order">
+			<value>1</value>
+		</property>
+	 	<property name="interceptors">
+	       	<list>
+	           	<ref bean="openSessionInViewInterceptor"/>                        
+	         </list>
+	   	</property>
+  	</bean>	
+  	
+  	<bean id="urlMapping"
+         class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+         <property name="order">
+			<value>3</value>
+		</property>        
+        <property name="mappings">
+            <props>               
+                <prop key="/checkoutflow.do">flowController</prop>
+                <prop key="/addToCart.do">flowController</prop>                                 
+                <prop key="/browseevents.do">flowController</prop>
+                <prop key="/viewCart.do">flowController</prop>
+                <prop key="/booknow.do">flowController</prop>                         
+            </props>
+        </property>    
+    </bean>   	
+	
+  	<bean id="handlerMapping2"
+          class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+         <property name="order">
+			<value>4</value>
+		</property>
+        <property name="interceptors">
+            <list>
+                <ref bean="openSessionInViewInterceptor"/>                
+            </list>
+        </property>
+          <property name="mappings">
+            <props>               
+                <prop key="/navigateprofile.do">navigationController</prop>
+                <prop key="/checkout.do">checkoutController</prop>
+                <prop key="/editprofile.do">editProfileUserController</prop>             
+                <prop key="/uploadFile.do">uploadFileController</prop>
+                <prop key="/*/*/saveprofileinfo.do">profileControllerMultiAction</prop>
+                <prop key="/savetestimony.do">profileControllerMultiAction</prop>
+                <prop key="/presenttestimony.do">profileControllerMultiAction</prop>
+                <prop key="/edituserpassword.do">editUserPasswordController</prop>              
+            </props>
+        </property>               
+    </bean>
+    <bean id="handlerMapping3"
+          class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="order">
+			<value>5</value>
+		</property>
+        <property name="interceptors">
+            <list>
+               <ref bean="openSessionInViewInterceptor"/>                                   
+            </list>
+        </property>
+          <property name="mappings">
+            <props>
+                <prop key="/login.do">loginController</prop>               
+                <prop key="/*forum*">forumController</prop>             
+                <prop key="/newthread.do">createForumPost</prop>    
+                <prop key="/replythread.do">createForumThread</prop>
+                <prop key="/*userhome.do">profileControllerMultiAction</prop>
+                <prop key="/confirmprofile.do">profileControllerMultiAction</prop>
+                <prop key="/presentforgotpassword.do">profileControllerMultiAction</prop>
+                <prop key="/forgotpassword.do">profileControllerMultiAction</prop>                                  
+                <prop key="/createuser.do">createUserController</prop>
+                <prop key="/createpresenter.do">createPresenterController</prop>
+                <prop key="/viewpage*.do">navigationController</prop>
+                <prop key="/viewtestimonies.do">navigationController</prop>
+                <prop key="/index.do">navigationController</prop>     
+                <prop key="/createVideo.do">createVideoController</prop>
+                              
+            </props>
+        </property>               
+    </bean>
+    
+    <bean id="handlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
+    	<property name="order">
+			<value>8</value>
+		</property>
+    	<property name="interceptors">
+	            <list>	              
+	                <ref bean="openSessionInViewInterceptor"/>     	              
+	            </list>
+	    </property>
+    </bean>
+    	
+	 
+    <bean id="TabsInterceptor" class="com.myownmotivator.web.controllers.tabs.TabsFilter" />  	
+	
+</beans>

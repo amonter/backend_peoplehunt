@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:task="http://www.springframework.org/schema/task"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+				http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+
+	<task:annotation-driven scheduler="scheduler"/>
+	
+	<task:scheduler id="scheduler" pool-size="1"/>
+  
+    <context:component-scan base-package="com.myownmotivator.web.controllers.crowdmodule" use-default-filters="false">
+  		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+  		<context:include-filter type="annotation" expression="org.springframework.stereotype.Component"/>
+	</context:component-scan>	
+	
+	<bean class="com.crowdscanner.controller.RestMatchController"></bean>	  
+    
+	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="org.springframework.dao.DataAccessException">dataAccessFailure</prop>
+				<prop key="org.springframework.transaction.TransactionException">dataAccessFailure</prop>
+			</props>
+		</property>
+	</bean>	
+	
+	<bean id="authInterceptor" class="com.myownmotivator.web.controllers.crowdmodule.AuthenticationInterceptor">
+                <property name="loginUrl" value="/crowdmodule/auth/login"/>
+                <property name="ignoreUrls">
+                        <list>
+                              <value>/crowdmodule/home</value>
+                                <value>/crowdmodule/public/**</value>
+                                <value>/crowdmodule/auth/login</value>
+                                <value>/crowdmodule/auth/login_ajax</value>
+                                <value>/crowdmodule/auth/register</value>
+                                <value>/crowdmodule/auth/peoplehunt/login</value>
+                                <value>/crowdmodule/auth/registerattendee</value>
+                                <value>/crowdmodule/auth/prepareregisterpeoplehunt/**</value>
+                                <value>/crowdmodule/auth/mobile/**</value>
+                                <value>/crowdmodule/mobile/**</value>
+                        </list>
+                </property>
+      </bean>
+
+	<bean id="authInterceptor_peoplehunt" class="com.myownmotivator.web.controllers.crowdmodule.AuthenticationInterceptor">
+                <property name="loginUrl" value="/crowdmodule/auth/peoplehunt/login"/>
+                <property name="ignoreUrls">
+                        <list>
+                                <value>/crowdmodule/home</value>
+                                <value>/crowdmodule/public/**</value>
+                                <value>/crowdmodule/mobile/public/**</value>
+                                <value>/crowdmodule/auth/login</value>
+                                <value>/crowdmodule/mobile/auth/peoplehunt/login</value>
+                                <value>/crowdmodule/auth/login_ajax</value>
+                                <value>/crowdmodule/auth/mobile/registerattendeetwitterdev</value>
+                                <value>/crowdmodule/mobile/auth/registerattendeetwitterdev</value>
+                                <value>/crowdmodule/mobile/auth/registerattendeefacebook</value>
+                                <value>/crowdmodule/auth/register</value>
+                                <value>/crowdmodule/auth/registerattendee</value>
+                                <value>/crowdmodule/mobile/showscoreboard**</value>
+                                <value>/crowdmodule/mobile/auth/registerattendeedev</value>
+                                <value>/crowdmodule/auth/mobile/prepareregisterpeoplehunt/**</value>
+                                <value>/crowdmodule/mobile/auth/prepareregisterpeoplehunt/**</value>
+
+                         </list>
+                </property>
+        </bean>
+	
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" >
+                <property name="order">
+                        <value>0</value>
+                </property>
+                <property name="interceptors">
+                <list>
+                        <ref bean="openSessionInViewInterceptor"/>
+                        <ref bean="authInterceptor"/>
+                        <ref bean="authInterceptor_peoplehunt"/>
+                </list>
+                </property>
+        </bean>
+  	
+  	<bean id="handlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
+    	<property name="order">
+			<value>1</value>
+		</property>
+    	<property name="interceptors">
+	            <list>	              
+	                <ref bean="openSessionInViewInterceptor"/>     	              
+	            </list>
+	    </property>
+    </bean> 
+    <bean id="handlerMapping2" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+         <property name="order">
+			<value>2</value>
+		</property>
+        <property name="interceptors">
+            <list>               
+                <ref bean="openSessionInViewInterceptor"/>                
+            </list>
+        </property>                       
+    </bean>
+    	
+			
+</beans>

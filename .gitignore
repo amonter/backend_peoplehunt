@@ -1,0 +1,12 @@
+bin/*
+build/*
+.svn
+.metadata
+*.war
+build.xml
+.DS_Store
+build.properties
+peoplehuntv2_pushaws.p12
+build.xml
+.DS_Store
+/bin

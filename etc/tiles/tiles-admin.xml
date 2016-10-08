@@ -1,0 +1,130 @@
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+ <tiles-definitions>
+ 	
+ 	<definition name="body_login_admin" template="/jsp/meetforeal/parts/body_admin.jsp">
+		<put-attribute name="searchprofile_admin" value="/jsp/meetforeal/admin/searchprofile_admin.jsp" />		
+	</definition>		
+
+	<definition name="administration" template="/jsp/meetforeal/admin/administration.jsp">
+		<put-attribute name="body-tile" value="body_login_admin" />		
+    	<put-attribute name="admintabs-tile" value="/jsp/meetforeal/tabs/admintabs.jsp" />
+	</definition>
+	
+	<definition name="admin_forum" extends="administration">
+		<put-attribute name="body-tile" value="/jsp/meetforeal/admin/admin_forum/admin_forum.jsp" />		    	
+	</definition>
+	
+	<definition name="config" extends="administration">
+		<put-attribute name="body-tile" value="/jsp/meetforeal/admin/config.jsp" />		    	
+	</definition>
+	
+	<definition name="upload_admin" extends="administration">
+		<put-attribute name="body-tile" value="/jsp/meetforeal/admin/upload_admin.jsp" />		    	
+	</definition>
+	
+	<definition name="create_forum" extends="administration">
+		<put-attribute name="body-tile" value="/jsp/meetforeal/admin/create_forum.jsp" />		    	
+	</definition>	
+	
+	<definition name="admin_events" extends="administration">
+		<put-attribute name="body-tile" value="/jsp/meetforeal/admin/event_admin.jsp" />		    	
+	</definition>
+	
+	<definition name="tags_page" template="/jsp/meetforeal/admin/tags.jsp">
+		<put-attribute name="function-tile" value="/jsp/meetforeal/admin/create_tag.jsp" />		    	
+	</definition>
+	
+	<definition name="links_page" template="/jsp/meetforeal/admin/tags.jsp">
+		<put-attribute name="function-tile" value="/jsp/meetforeal/admin/link_tag.jsp" />		    	
+	</definition>	
+	
+	<definition name="tags" extends="administration">
+		<put-attribute name="body-tile" value="tags_page" />		    	
+	</definition>
+	
+	<definition name="statistics" extends="administration">
+		<put-attribute name="body-tile" value="/jsp/meetforeal/admin/statistics.jsp" />			    	
+	</definition>
+	
+	<definition name="taglinking" extends="administration">
+		<put-attribute name="body-tile" value="links_page" />			    	
+	</definition>
+	
+	<definition name="view_blog_page" template="/jsp/meetforeal/admin/view_blog_admin.jsp">
+		<put-attribute name="the_blog" value="/jsp/meetforeal/blog/view_blog.jsp" />			    	
+	</definition>	
+	
+	<definition name="view_blog_admin" extends="administration">
+		<put-attribute name="body-tile" value="view_blog_page" />			    	
+	</definition>					
+ 		
+ 	<definition name="edit_blogpost_admin" extends="administration">
+		<put-attribute name="body-tile" value="/jsp/meetforeal/blog/edit_blogpost.jsp" />			    	
+	</definition>		
+	
+	<definition name="view_post_admin" extends="administration">
+		<put-attribute name="body-tile" value="/jsp/meetforeal/blog/view_posts.jsp" />			    	
+	</definition>
+	
+	<definition name="browse_post_admin" extends="administration">
+		<put-attribute name="body-tile" value="/jsp/meetforeal/admin/admin_forum/browse_post_admin.jsp" />			    	
+	</definition>
+	
+	<definition name="thread_admin" extends="administration">
+		<put-attribute name="body-tile" value="/jsp/meetforeal/admin/admin_forum/thread_admin.jsp" />			    	
+	</definition>
+	
+	<definition name="edit_event_html" extends="administration">
+		<put-attribute name="body-tile" value="/jsp/meetforeal/admin/edit_event_html.jsp" />			    	
+	</definition>
+	
+	<definition name="view_event" extends="administration">
+		<put-attribute name="body-tile" value="/jsp/meetforeal/admin/view_event.jsp" />			    	
+	</definition>
+	
+	<definition name="post_podcast_admin" extends="administration">
+		<put-attribute name="body-tile" value="/jsp/meetforeal/admin/podcast/post_podcast_admin.jsp" />			    	
+	</definition>
+	
+	<definition name="podcast_admin" extends="administration">
+		<put-attribute name="body-tile" value="/jsp/meetforeal/admin/podcast/podcast_admin.jsp" />			    	
+	</definition>								
+	
+	<definition name="admin_videos" extends="administration">
+		<put-attribute name="body-tile" value="/jsp/meetforeal/admin/video/video.jsp" />		    	
+	</definition>
+	
+	<definition name="display_videos" extends="administration">
+		<put-attribute name="body-tile" value="/jsp/meetforeal/admin/video/videoDetails.jsp" />		    	
+	</definition>	
+	
+	<definition name="view_suggestions" extends="administration">
+		<put-attribute name="body-tile" value="/jsp/meetforeal/admin/suggestions/view_suggestions.jsp" />		    	
+	</definition>	
+	
+	<definition name="view_crowdblog_admin" extends="administration">
+		<put-attribute name="body-tile" value="/jsp/meetforeal/admin/view_blogcrowd.jsp" />		    	
+	</definition>	
+	
+	<definition name="listeditcrowblog_admin" extends="administration">
+		<put-attribute name="body-tile" value="/jsp/meetforeal/blog/crowd/admin_editpostcrowd.jsp" />		    	
+	</definition>
+	
+	<definition name="questionlist_view" extends="administration">
+		<put-attribute name="body-tile" value="/jsp/meetforeal/admin/crowdscanner/questionlist_view.jsp" />		    	
+	</definition>
+	
+	
+	<definition name="allquestionlist_view" extends="administration">
+		<put-attribute name="body-tile" value="/jsp/meetforeal/admin/crowdscanner/allquestionlist_view.jsp" />		    	
+	</definition>
+	
+	
+	<definition name="set_subscription" extends="administration">
+		<put-attribute name="body-tile" value="/jsp/meetforeal/admin/set_subscription.jsp" />		    	
+	</definition>						
+ 		
+ </tiles-definitions>

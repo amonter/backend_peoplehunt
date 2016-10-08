@@ -1,0 +1,68 @@
+<html>
+<head>
+   <script type="text/javascript" src="http://images.crowdscanner.com/jquery-1.4.2.min.js"></script>
+   <script src="http://images.crowdscanner.com/processing-0.9.7.min.js"></script>    
+   <title>Crowd Visualisation</title>
+</head>
+<body>
+
+
+<script type="application/processing" target="theCanvas">
+
+${preload_images}
+
+
+
+PImage a;  // Declare variable "a" of type PImage
+PImage b;  // Declare variable "a" of type PImage
+PImage c;  // Declare variable "a" of type PImage
+void setup() {
+ //noLoop(); // rather than drawing as an animation, only call draw() once
+ size(500, 500);
+ b = loadImage("http://94.76.200.141:81/crowdscanner_dev/picture_library/profile/736.jpg");
+ a = loadImage("http://profile.ak.fbcdn.net/hprofile-ak-snc4/49222_1036507027_7205_n.jpg"); // Load the images for use in the sketch 
+ c = loadImage("http://images.crowdscanner.com/anon_nosmile.png"); // Load the images for use in the sketch 
+} 
+void draw() {
+ image(b,200,200);
+ image(c,0,300);
+ image(a, 0, 0); // // Display the image at point (0,0) with natural width and height 
+ //image(a, width/2, 0, a.width/2, a.height/2); // Display the image again, this time starting at (width/2, 0), and scaled to 50% in both x and y direction 
+}
+
+	
+
+
+
+</script>
+
+
+<canvas width="600" height="600" id ="theCanvas"></canvas>
+
+
+<script type="text/javascript">
+var theData;
+
+$(document).ready(function(){  
+	
+	  
+ 	$.getJSON('/crowdscanner_dev/rest/bubblebyanswers/12', function(data) {
+		 	theData = data;
+		 
+			var scripts = document.getElementsByTagName("script");				    
+		    	var canvas;
+		    	for (var i = 0, j = 0; i < scripts.length; i++) {
+		      	if (scripts[i].type == "application/processing") {
+		       	      	var secondCanvas = $('canvas#theCanvas').get(0);
+		        	new Processing(secondCanvas, scripts[i].text);          
+		        }
+		          
+		     }			 	
+		 	
+	}); 
+});
+</script>
+
+</body>
+</html>
+

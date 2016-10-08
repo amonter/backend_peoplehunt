@@ -1,0 +1,338 @@
+Connectors l1;
+float radius = 30;
+float[] x = new float[]; 
+float[] y = new float[];
+float[] d = new float[];
+HashMap losImage = new HashMap();
+Array theDataPop = new Array();
+
+
+int maxSize = 70;
+int minSize = 60;
+float [][] e; 
+float ds = 2;
+int sel = 0;
+int change = 0;
+int num = 0;
+String[] likesList = new String[];
+float[] textLength = new float[5];
+float[] xpos = new float[5];
+
+boolean dragging = false;
+
+
+void mouseDragged(){
+	dragging = true;
+}
+
+void mouseReleased(){
+	dragging = false;
+	}
+	
+	
+
+	
+void setup(){
+
+
+String theUrl = '/crowdscanner_dev/rest/retrieveilikegraph/'+selectedLike;								  
+
+$.ajax({ url: theUrl, dataType: 'json', cache:false, async: false, success: function(modeData){  
+
+	theDataPop = modeData.activenodes; 
+	//alert(theDataPop);
+	e = new float [theDataPop.length][5];
+	
+	for (int i = 0; i<theDataPop.length; i++){
+		 
+		PImage anImage = loadImage(theDataPop[i].url);
+		losImage.put(theDataPop[i].uid, anImage);				  
+	}
+	
+	
+	
+	for (int i = 0; i<theDataPop.length; i++){
+			
+		float radius = 2.0;
+	    for (int deg = 0; deg<theDataPop.length; deg ++){
+			float angle = radians(deg*100);
+			float f = 325 + (cos(angle) * radius)*40;
+			float g = 210 + (sin(angle) * radius)*40;
+			//ellipse (f, g, 6, 6);
+			radius = radius+0.4;
+			x [deg]= f;
+			y [deg]= g;
+		}
+	}
+	
+	
+	//initialise the circles - as many as the data length, and their sizes
+	for (int j = 0; j<theDataPop.length; j++){
+		e[j][0] = x[j]; //X
+		e[j][1] = y[j]; //Y
+		e[j][2] = random(minSize, maxSize); //radius
+		e[j][3] = random(-.3, .3); //speed
+		e[j][4] = random(-.3, .3); //speed
+		
+	}
+	
+	
+  }
+
+}); 
+
+
+size(670, 480);
+frameRate(5);
+	
+smooth();
+strokeWeight(2);
+
+//noLoop();
+}
+
+
+void draw(){	
+	 
+	background(47, 79, 79);
+	
+	
+	HashMap aHashMap = new HashMap();
+	
+	//println(theDataPop.length);	
+	for (int b = 0; b<theDataPop.length; b++){
+					
+		aHashMap = insertToHash(x,y,theDataPop,d);						
+	}
+	
+
+	//println(theDataPop);
+
+					
+	drawConnections(theDataPop, aHashMap);	
+	
+	
+	
+}	
+		
+	
+			
+class Connectors{
+  float x1, y1, x2, y2;
+  int thick, gray;
+  
+  float rad1;
+  float rad2;
+  
+  Connectors(float xpos1, float ypos1, float xpos2, float ypos2, int t, int g, float radius1, float radius2){
+    x1 = xpos1;
+    y1 = ypos1;
+    x2 = xpos2;
+    y2 = ypos2;
+    thick = t; 
+    gray = g; 
+    rad1=radius1;
+    rad2=radius2;
+    
+  }
+  
+ void update1(){
+ 
+    float angle = atan2(y2-y1, x2-x1);
+    float distance = dist(x1, y1, x2, y2);
+    
+    pushMatrix();
+      translate(x1, y1);
+      rotate(angle);
+      //strokeWeight(t);
+      stroke(255, 100);
+      line( rad1, 0, distance/2, 0 );
+      strokeWeight(1);
+      fill(255, 100)
+	  rectMode (CENTER);
+	  rect(distance/2, 0, 4, 4 );
+    popMatrix();
+    }
+}
+
+function ArraySubtract(ara1,index) {
+   var aRes = new Array();
+   for(var i=0;i<ara1.length;i++) {
+     if(i != index) {
+       aRes.push(ara1[i]) ;
+     }
+   }
+   return aRes;
+}
+
+HashMap insertToHash(float  x,float y , Array theArray, float d) {
+	
+	HashMap theHash = new HashMap();
+	for(i=0;i < theArray.length; i++) {
+		
+		String theKey = theArray[i].uid;
+		String theName = theArray[i].name;
+		Array anArray = new Array[4];
+		anArray[0] = x[i];
+		anArray[1] = y[i];
+		anArray[2] = theName;
+		anArray[3] = d[i]
+		//println(' x equals: '+x[i]+' y equals:'+y[i]);
+			
+		theHash.put(theKey, anArray);			
+	}
+	
+  return theHash;	
+ 		
+}
+
+void drawConnections(Array theDataPop, HashMap aHash){
+	
+	for (int j = 0; j<theDataPop.length; j++){
+						  
+						  var userArray = new Array(1);
+						  userArray[0] = theDataPop[j];
+						 //println(userArray[0].name);
+						
+						  var index = theDataPop.indexOf(theDataPop[j]);
+						  var shorterArray = ArraySubtract(theDataPop,index);
+						
+						  var userConnections = userArray[0].connections;
+						  //println(userConnections);
+						  	for (int i=0;i<userConnections.length;i++) {
+									var singleConnection = userArray[0].connections[i];
+							   						
+							   		for(int k=0; k<shorterArray.length; k++){
+										 
+						  	   			var anotherUserID = shorterArray[k].uid;
+						  	   			
+									   			if( anotherUserID == singleConnection){
+								  	   				//println('yes');
+								  	   				float radi = e[j][2];
+						  							float diam = radi/2;
+								  	   				Array theNode = aHash.get(anotherUserID);	  	   			
+								  	   			
+								  	   			
+								  	   			l1 = new Connectors(e[j][0], e[j][1], theNode[0],  theNode[1], 2, 200, diam, theNode[3]);
+											    l1.update1();
+											   	//println('user checking '+e[j][0]+'friend '+theNode[0]+'user id' +anotherUserID);
+											   				   
+						  	   				}
+						  	   		}
+							   	}
+						   	
+						   	
+						  noStroke();
+						  float radi = e[j][2];
+						  float diam = radi/2;
+						  
+						  if (dist(e[j][0], e[j][1], mouseX, mouseY)<radi){
+							  	
+								 
+							  	strokeWeight(4);
+							  	stroke(255);
+							  	fill(255);
+							  	//strokeJoin(ROUND);
+							  	rectMode (CENTER);
+							  	rect(e[j][0], e[j][1], 84, 84);
+							  
+							   	imageMode (CENTER);
+							   	PImage theImage = losImage.get(theDataPop[j].uid);
+							    image(theImage, e[j][0], e[j][1], 80, 80);
+							   	
+							   	fill(255);
+							  	strokeWeight(2);		  	
+								rectMode (CORNER);
+							  	
+								String status= (theDataPop[j].status);
+								float boxLength = textWidth(status);
+								
+							  	String theName= (theDataPop[j].name);
+							  	float smallBoxLength = textWidth(theName);
+							  	
+							  	strokeWeight(12);
+							  	stroke(255);
+							  	strokeJoin(ROUND);
+							  	PFont font1;
+							  	font1 = loadFont("Arial");
+							  	
+							  	textFont(font1);
+							  		
+							  		if (theDataPop[j].status == null){
+							  		fill(255);
+							  		rect(e[j][0]+35, e[j][1]-45, smallBoxLength+10, 20);
+							  		fill(0);
+							  		textSize(16);
+							  		text(theName, e[j][0]+40, e[j][1]-30);
+							  		//println(theName);
+						  			}else{
+							  			fill(255);
+							  			rect(e[j][0]+35, e[j][1]-45, smallBoxLength+20, 20);
+							  			//println('hello'+theName);
+							  			fill(0);
+							  			textSize(16);
+							  			text(theName, e[j][0]+40, e[j][1]-30);
+							  			textSize(12);
+							  			//text(status, e[j][0]+40, e[j][1]-10);
+							  		}
+							    
+							    
+							    strokeWeight(2);
+							  	stroke(255);
+							    
+							    sel = 1; 
+							     if(dragging){
+								    
+								    e[j][0] = mouseX;
+								   e[j][1] = mouseY;
+								    
+								}							    
+							}else{
+							  //fill(64, 128, 187, 100);
+							  strokeWeight(2);
+							  stroke(255);
+							  //rectMode (CENTER);
+							  //rect(e[j][0], e[j][1], radi, radi);		  
+							  imageMode (CENTER);
+							  PImage theImage = losImage.get(theDataPop[j].uid);
+							  image(theImage, e[j][0], e[j][1], radi-2, radi-2);
+							  	fill(255, 0);
+							  //strokeWeight(2);
+							  //ellipse(e[j][0], e[j][1], radi+2, radi+2);
+							  stroke(47, 79, 79);
+							    strokeWeight(diam/2);
+							    ellipse(e[j][0], e[j][1], radi+9, radi+9);
+							    stroke(255);
+							    strokeWeight(3);
+							    ellipse(e[j][0], e[j][1], radi+2, radi+2);
+							  strokeWeight(2);
+							  stroke(255);
+							  sel = 0;
+						  }
+						  if((e[j][0] > 650-diam)||(e[j][0] < diam)){
+						  	e[j][3] = e[j][3]*-1;
+						  }
+						    
+						  if((e[j][1] > 380-diam)||(e[j][1] < diam)){
+						  	e[j][4] = e[j][4]*-1;
+						  }
+						  
+							//ellipse(e[j][0], e[j][1], radi, radi);  
+							  
+							//move circle
+							e[j][0]+=e[j][3];
+							e[j][1]+=e[j][4];
+							
+							x[j] = e[j][0];
+							y[j] = e[j][1];
+							d[j] = e[j][2];
+							
+							
+							
+											
+												    
+					}
+	
+	
+}
+

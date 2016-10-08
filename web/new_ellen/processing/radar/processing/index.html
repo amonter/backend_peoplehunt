@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <script type="text/javascript" src="http://images.crowdscanner.com/jquery-1.4.2.min.js"></script>
+   <script src="http://images.crowdscanner.com/processing-0.9.7.min.js"></script>    
+   <title>Crowd Visualisation</title>
+</head>
+<body>
+
+<style>  
+  
+
+
+a, a:link {
+	color:#ffffff;
+	line-height:150%;	
+	font-family:arial;
+	text-decoration: none;		
+}
+
+
+/* Z-index of #mask must lower than #boxes .window */  
+#mask {  
+	position:absolute;  
+	z-index:9000;  
+	background-color:#666666;  
+	display:none;  
+ }  
+    
+#boxes .window {  
+   position:absolute;  
+   width:440px;  
+   height:400px;  
+   display:none;  
+   z-index:9999;  
+   padding:20px;
+   
+ }  
+   
+  
+ /* Customize your modal window here, you can add background image too */  
+ #boxes #dialog {  
+   background-color:#333333; 	 
+   width:675px;   
+   height:503px;  
+ }
+ 
+.colours{
+	 display:inline;
+	 padding:10px;
+	 }  
+.background{
+	 background-color:#333333;
+	 padding:20px;
+	 }
+	 
+
+	
+a:hover{
+	color:#333333;
+	background-color:#FF0074;
+	//font-size:20px;
+	line-height:150%;
+	//margin-left:20px;
+	font-family:arial;
+	text-decoration: none;
+	//font-weight:bold;
+	
+	}	
+</style>  
+
+<script type="application/processing" target="theCanvas">
+
+
+
+Connectors l1;
+float radius = 30;
+float[] x = new float[]; 
+float[] y = new float[];
+float[] d = new float[];
+HashMap losImage = new HashMap();
+var avatars = new Array();
+
+float [][] e = null;
+float ds = 2;
+boolean sel = false;
+int change = 0;
+int num = 0;
+int arrayCount = 0;
+int avatarCount = 0;
+String[] likesList = new String[];
+float[] textLength = new float[5];
+float[] xpos = new float[5];
+float spring = 0.01;
+boolean dragging = false;
+
+
+void mouseDragged(){
+	dragging = true;
+}
+
+void mouseReleased(){
+	dragging = false;
+	}
+
+/* @pjs preload = "clonesText2.png"; */
+
+PImage b;
+	
+void setup(){
+	
+	size(screen.width, 980);
+	frameRate(15);
+	
+	smooth();
+	strokeWeight(2);
+	
+	if (theData.five != null) addImages(theData.five); 
+	if (theData.four != null) addImages(theData.four); 
+	if (theData.three != null) addImages(theData.three);  	
+	if (theData.two != null) addImages(theData.two);  	
+	
+	
+	e = new float[arrayCount][5]; 
+	int countLevel = 5;	
+	int totalCount = 0;	
+	while (countLevel != 0) {		
+		switch (countLevel) {
+		
+			case 5:			
+			displayNodes(theData.five, 122.5);		
+			break;
+			
+			case 4:
+			displayNodes(theData.four, 204.5);				
+			break;
+			
+			case 3:
+			displayNodes(theData.three, 275.5);		
+			break;
+			
+			case 2:
+			displayNodes(theData.two, 346.5);			
+			break;	
+		}
+		
+		countLevel--;		
+	}
+	
+	
+	PFont font1;
+	font1 = loadFont("Arial");
+	textFont(font1);
+	textSize(18);
+}
+
+
+void displayNodes(Array info, float aRadio) {
+
+	if (info != null) {
+		int count = 0;		
+		float radius = aRadio;		
+		float aWidth =  746/2;		
+		float aHeight = 746/2;			
+		
+		
+		for (int i = 0; i<info.length; i++) {
+		
+			String theEmail = info[i].email;		
+			float angle = radians(i*20);		
+			
+			float f = (aWidth) + (cos(angle) * radius);			
+			float g = (aHeight) + (sin(angle) * radius);	
+			if (currentEmail.equals(theEmail)){			
+				f = 373 + 13;				
+				g = 373 + 5;										
+			}
+			
+			//println("angle "+angle+" "+i+" rad "+aRadio+" em"+theEmail+" "+f+" "+g+" av"+avatarCount);			
+			
+			
+			x [avatarCount]= f;
+			y [avatarCount]= g;	
+			
+			e[avatarCount][0] = x[avatarCount]; //X
+			e[avatarCount][1] = y[avatarCount]; //Y
+			e[avatarCount][2] = 63; //radius
+			e[avatarCount][3] = 0; //x speed
+			e[avatarCount][4] = 0; //y speed
+			avatars[avatarCount] = info[i];
+			
+			avatarCount++;
+		}
+	}		
+	
+}
+
+
+
+
+
+void addImages(Array theArray) {
+		
+	for (int i = 0; i<theArray.length; i++){
+		 
+		PImage anImage = loadImage(theArray[i].url);
+		losImage.put(theArray[i].email, anImage);	
+		arrayCount++;			  
+	}	
+}
+
+
+void draw(){
+	
+	
+	background(51, 51, 51);
+
+	stroke(255,255,153);
+  	strokeWeight(2);
+  	fill(0,153,153);
+	ellipse(13+746/2,5 +746/2, 746, 746);
+	stroke(255,255,153);
+  	strokeWeight(2);
+  	fill(0,204,204);
+	ellipse(86+600/2,78 +600/2, 600, 600);
+	stroke(255,255,153);
+  	strokeWeight(2);
+  	fill(112,221,216);
+	ellipse(157+458/2,149+458/2, 458, 458);
+	stroke(255,255,153);
+  	strokeWeight(2);
+  	fill(255,255,0);
+	ellipse(228+316/2,220+316/2, 316, 316);  
+	
+	PImage b = loadImage("clonesText2.png");
+	image(b, 14 +742/2,6+742/2);
+	
+	
+	
+	drawConnections(avatars);		
+	drawside(avatars);
+	
+
+}	
+	
+
+void drawConnections(Array theData){
+	
+	if (theData != null) {
+	for (int j = 0; j<theData.length; j++){
+						  
+						
+						  float radi = e[j][2];
+						  float diam = radi/2;
+						  
+						  
+						  //when hover over image
+						  if (dist(e[j][0], e[j][1], mouseX, mouseY)<radi){
+							  	
+							  	//style
+							  	strokeWeight(4);
+							  	stroke(255);
+							  	fill(255);
+							  	rectMode (CENTER);
+							  	
+							  	//draw white outer rect
+							  	rect(e[j][0], e[j][1], 84, 84);
+							  
+							  	//put image in centre
+							   	imageMode (CENTER);
+							   	PImage theImage = losImage.get(theData[j].email);
+							    image(theImage, e[j][0], e[j][1], 80, 80);							   	
+							   								
+							  	String theName= (theData[j].name);
+							  	float smallBoxLength = textWidth(theName);
+							  	
+							  	rectMode (CORNER);
+							  	strokeWeight(12);
+							  	stroke(255);
+							  	strokeJoin(ROUND);
+							  	
+							  	fill(255);
+							  	rect(e[j][0]+35, e[j][1]-45, smallBoxLength+10, 20);
+							  			
+							  	fill(0);
+							  	textSize(16);
+							  			
+							  	text(theName, e[j][0]+40, e[j][1]-30);							    
+							    strokeWeight(2);						    
+							    sel = true; 
+							  
+							}else{
+							  					 
+							  //style
+							  strokeWeight(2);
+							  stroke(255);
+							  
+							  //draw outer rectangle
+							  //rectMode (CENTER);
+							  //rect(e[j][0], e[j][1], radi, radi);		  
+							  
+							  //put image in centre
+							 
+							  strokeWeight(4);
+							  	stroke(255);
+							  	fill(255);
+							  	rectMode (CENTER);
+							  	
+							  	//draw white outer rect
+							  	rect(e[j][0], e[j][1], radi+1, radi+1);
+							  	
+							  	imageMode (CENTER);
+							  	//println("draw "+theData[j].email+" "+ e[j][0]+ " "+e[j][1]);
+							  	PImage theImage = losImage.get(theData[j].email);
+							  	image(theImage, e[j][0], e[j][1], radi-1, radi-1);
+							  	
+							  
+							  strokeWeight(2);
+							  stroke(255);
+							  sel = false;
+						  }										  
+						    
+					}
+	
+	}
+}
+
+
+
+void drawside(Array theData) {
+	
+	if (theData != null) {
+	
+	int counter = 0;
+	int xValue = 900;
+	int yValue = 80;		
+	for (int j = 0; j<theData.length; j++){ 
+		
+		  float radi = e[j][2];
+		  float diam = radi/2;
+		  
+		  
+		  //when hover over image
+				 
+			  //style
+			  strokeWeight(2);
+			  stroke(255);
+			  
+			  //draw outer rectangle
+			  //rectMode (CENTER);
+			  //rect(e[j][0], e[j][1], radi, radi);		  
+			  
+			  //put image in centre
+			 
+			  strokeWeight(4);
+			  	stroke(255);
+			  	fill(255);
+			  	rectMode (CENTER);
+			  	
+			  	//draw white outer rect
+			  	rect(xValue,yValue, radi+1, radi+1);
+			  	
+			  	imageMode (CENTER);
+			  	//println("draw "+theData[j].email+" "+ e[j][0]+ " "+e[j][1]);
+			  	PImage theImage = losImage.get(theData[j].email);
+			  	image(theImage, xValue, yValue, radi-1, radi-1);
+			  	
+			  
+			  strokeWeight(2);
+			  stroke(255);
+			  sel = 0;
+		  										  
+		
+		 xValue = xValue + 78;
+		 counter++;
+		 if(counter % 3 == 0) {
+			yValue = yValue + 70;
+			xValue = 900;	 
+		} 				    
+			
+		}		
+	}
+}
+
+
+	
+</script>
+
+<div style="width:300px;max-width:300px;background-color:#333333;height:350px;" id="geronimo"></div>
+
+<canvas width="600" height="600" id ="theCanvas"></canvas>
+
+
+
+
+<script type="text/javascript">
+
+$.extend({
+	  getUrlVars: function(){
+	    var vars = [], hash;
+	    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+	    for(var i = 0; i < hashes.length; i++)
+	    {
+	      hash = hashes[i].split('=');
+	      vars.push(hash[0]);
+	      vars[hash[0]] = hash[1];
+	    }
+	    return vars;
+	  },
+	  getUrlVar: function(name){
+	    return $.getUrlVars()[name];
+	  }
+});
+
+var theData;
+var currentEmail;
+	
+$(document).ready(function(){  
+	
+	currentEmail = $.getUrlVar('email');
+	var theEmail = encodeURIComponent(currentEmail); 
+ 	$.getJSON('/myownmotivator/rest/processminimalquestionsalghtml/'+theEmail+'/7', function(data) {
+		 	theData = data;
+		 	
+		 	$('#geronimo').append("<div id='theinner'style='padding:6px;'></div>");
+		 	addMainAvatars(theData.three);
+		 	addMainAvatars(theData.five);
+		 	addMainAvatars(theData.four);
+		 	addMainAvatars(theData.two);
+			var scripts = document.getElementsByTagName("script");				    
+		    var canvas;
+		    for (var i = 0, j = 0; i < scripts.length; i++) {
+		      if (scripts[i].type == "application/processing") {
+		       
+			      var secondCanvas = $('canvas#theCanvas').get(0);
+		          new Processing(secondCanvas, scripts[i].text);          
+		        }
+		          
+		     }			 	
+		 	
+	}); 	
+});
+
+
+function addMainAvatars(theArray) {
+	
+	if (theArray != null) {
+		for(var a =0;a < theArray.length;a++) {               
+					
+	        $('#theinner').append("<div style='padding-right:5px;float:left;'><a href='#' name='"+theArray[a].email+"'><img width='80px' height='80px' src='"+theArray[a].url+"'/></a></div>");         
+	     	$('a[name='+theArray[a].email+']').click(function(e) {
+	                //e.preventDefault();
+	                //Get the A tag
+	                var theUsername = $(this).attr('name');
+	                window.location.href = 'http://www.crowdscanner.com/igniteradar/?email='+ theUsername;	                
+		    });   
+		}	
+	}		
+}
+
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1869004-4']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>

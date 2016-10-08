@@ -1,0 +1,42 @@
+<html>
+
+<body>
+
+<h3 style="font-family:helvetica; font-size:18px;">Hi ${name},
+
+<br><br>Hope you enjoyed playing PeopleHunt at the GSAS Orientation Session on Monday! <br><br>You can check out the connections you made here: ${url}
+
+<br><br>
+
+</h3>
+
+<div>
+
+<p style="font-family:helvetica; font-size:12px;">
+
+Let us know if you have any feedback or cool stories of people you met. 
+
+<br><br>
+
+You can always update your Twitter, LinkedIn or Email address in the settings of your <a href="http://peoplehunt.me/hunt">PeopleHunt app</a>. If you put in your Email address we can find you on Facebook. 
+
+<br><br>
+
+If you'd prefer not to hear from us, just reply with unsubscribe in the subject line!
+
+<br><br>
+
+Cheers,
+
+<br>
+
+Ellen Dudley<br>
+Co-Founder, PeopleHunt<br>
+<a href="mailto:ellen@peoplehunt.me">ellen@peoplehunt.me</a>
+ 
+
+</div>
+
+</body>
+
+</html>

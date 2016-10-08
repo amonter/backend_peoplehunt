@@ -1,0 +1,237 @@
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+       
+       
+ <tiles-definitions>
+ 
+ 	<definition name="home" template="/jsp/crowdmodule/home.jsp"/>
+		
+ 	<definition name="visual/create" template="/jsp/crowdmodule/layout/main_template.jsp">
+ 		<put-attribute name="title" value="New Visualization" />
+ 		<put-attribute name="description" value="Create a new Visualization" />	
+		<put-attribute name="main_content" value="/jsp/crowdmodule/visual/create.jsp" />		
+	</definition>
+	
+	<definition name="visual/create_success" template="/jsp/crowdmodule/layout/main_template.jsp">
+ 		<put-attribute name="title" value="New Visualization" />
+ 		<put-attribute name="description" value="Create a new Visualization" />	
+		<put-attribute name="main_content" value="/jsp/crowdmodule/visual/create_success.jsp" />		
+	</definition> 	
+
+	<definition name="event/dashboard" template="/jsp/crowdmodule/layout/main_template.jsp">
+ 		<put-attribute name="title" value="Event dashboard" />
+ 		<put-attribute name="description" value="Event dashboard" />	
+		<put-attribute name="main_content" value="/jsp/crowdmodule/event/dashboard.jsp" />		
+	</definition>
+	
+	
+	<definition name="event/create" template="/jsp/crowdmodule/layout/main_template.jsp">
+ 		<put-attribute name="title" value="Event dashboard" />
+ 		<put-attribute name="description" value="Event dashboard" />	
+		<put-attribute name="main_content" value="/jsp/crowdmodule/event/create.jsp" />		
+	</definition>
+	
+	<definition name="event/upload_photo" template="/jsp/crowdmodule/layout/main_template.jsp">
+ 		<put-attribute name="title" value="Event dashboard" />
+ 		<put-attribute name="description" value="Event dashboard" />	
+		<put-attribute name="main_content" value="/jsp/crowdmodule/event/upload_photo.jsp" />		
+	</definition> 	
+	
+	<definition name="event/upload_photo_success" template="/jsp/crowdmodule/event/upload_photo_success.jsp"/>
+	
+	<definition name="event/choose_visual" template="/jsp/crowdmodule/layout/main_template.jsp">
+ 		<put-attribute name="title" value="Event dashboard" />
+ 		<put-attribute name="description" value="Event dashboard" />	
+		<put-attribute name="main_content" value="/jsp/crowdmodule/event/choose_visual.jsp" />		
+	</definition>
+
+	<definition name="visual/bubbles" template="/jsp/crowdmodule/visual/bubbles.jsp"/>
+	<definition name="visal/bubbles_mobile" template="/jsp/crowdmodule/visual/bubbles_mobile.jsp"/>
+	<definition name="visual/by_user" template="/jsp/crowdmodule/visual/by_user.jsp"/>
+	<definition name="visual/mindfield" template="/jsp/crowdmodule/visual/mindfield.jsp"/>
+
+	<definition name="event/visual" template="/jsp/crowdmodule/layout/main_template.jsp">
+ 		<put-attribute name="title" value="Event dashboard" />
+ 		<put-attribute name="description" value="Event dashboard" />	
+		<put-attribute name="main_content" value="/jsp/crowdmodule/event/visual.jsp" />		
+	</definition>
+	
+	<definition name="event/statistics" template="/jsp/crowdmodule/layout/main_template.jsp">
+ 		<put-attribute name="title" value="Event dashboard" />
+ 		<put-attribute name="description" value="Event dashboard" />	
+		<put-attribute name="main_content" value="/jsp/crowdmodule/event/statistics.jsp" />		
+	</definition>
+	
+	
+	
+	<definition name="question/main" template="/jsp/crowdmodule/layout/main_template.jsp">
+ 		<put-attribute name="title" value="Event dashboard" />
+ 		<put-attribute name="description" value="Event dashboard" />	
+		<put-attribute name="main_content" value="/jsp/crowdmodule/questions/main.jsp" />		
+	</definition>
+
+	<definition name="event/allevents" template="/jsp/crowdmodule/layout/template_allevents.jsp">
+     	<put-attribute name="title" value="All Events" />
+        <put-attribute name="description" value="All Events" />
+    </definition>
+    
+    <definition name="event/retrievequestions" template="/jsp/crowdmodule/layout/template_webquestion.jsp">
+        <put-attribute name="title" value="Event" />
+        <put-attribute name="description" value="Event" />
+        <put-attribute name="main_content" value="/jsp/crowdmodule/event/retreivequestions.jsp" />	
+    </definition>
+	
+	 <definition name="peoplehunt/picker_view" template="/jsp/crowdmodule/peoplehunt/peoplehunt_pickerview.jsp">
+        	<put-attribute name="title" value="PeopleHunt Questions" />
+        	<put-attribute name="description" value="Mobile Web PeopleHunt" />        	
+    	</definition>
+	
+	<definition name="peoplehunt/profile" template="/jsp/crowdmodule/peoplehunt/peoplehuntprofile.jsp">
+                <put-attribute name="title" value="PeopleHunt Profile" />
+                <put-attribute name="description" value="PeopleHunt Profile" />
+        </definition>
+	
+	
+	<definition name="event/responsethanks" template="/jsp/crowdmodule/layout/main_template.jsp">
+ 		<put-attribute name="title" value="Event" />
+ 		<put-attribute name="description" value="Event" />	
+		<put-attribute name="main_content" value="/jsp/crowdmodule/event/responsethanks.jsp" />		
+	</definition>	
+	
+	<definition name="auth/register/atd" template="/jsp/crowdmodule/layout/template_webquestion.jsp">
+ 		<put-attribute name="title" value="Registration attendees" />
+ 		<put-attribute name="description" value="Registration attendees" />	
+		<put-attribute name="main_content" value="/jsp/crowdmodule/auth/register_attendee.jsp" />		
+	</definition>
+	
+	<definition name="auth/register/atd/dev" template="/jsp/crowdmodule/layout/template_webquestion.jsp">
+                <put-attribute name="title" value="Registration attendees" />
+                <put-attribute name="description" value="Registration attendees" />
+                <put-attribute name="main_content" value="/jsp/crowdmodule/auth/register_attendee_dev.jsp" />
+        </definition>
+
+	
+	<definition name="auth/register_success" template="/jsp/crowdmodule/layout/main_template.jsp">
+ 		<put-attribute name="title" value="Registration success" />
+ 		<put-attribute name="description" value="Registration success" />	
+		<put-attribute name="main_content" value="/jsp/crowdmodule/auth/register_success.jsp" />		
+	</definition>
+	
+	<definition name="auth/register" template="/jsp/crowdmodule/layout/main_template.jsp">
+ 		<put-attribute name="title" value="Registration" />
+ 		<put-attribute name="description" value="Registration" />	
+		<put-attribute name="main_content" value="/jsp/crowdmodule/auth/register.jsp" />		
+	</definition>
+	
+	<definition name="auth/batchorder" template="/jsp/crowdmodule/layout/main_template.jsp">
+ 		<put-attribute name="title" value="CrowdScanner PeopleHunt Badges" />
+ 		<put-attribute name="description" value="CrowdScanner PeopleHunt Badges" />	
+		<put-attribute name="main_content" value="/jsp/crowdmodule/auth/process_batch.jsp" />		
+	</definition>	
+   	
+	<definition name="confirmed/batchorder" template="/jsp/crowdmodule/layout/main_template.jsp">
+ 		<put-attribute name="title" value="Badge Order Confirmed" />
+ 		<put-attribute name="description" value="CrowdScanner PeopleHunt Badges" />	
+		<put-attribute name="main_content" value="/jsp/crowdmodule/auth/batchorder_confirm.jsp" />		
+	</definition>	
+
+	<definition name="auth/login" template="/jsp/crowdmodule/layout/authentication_template.jsp">
+ 		<put-attribute name="title" value="Login" />
+ 		<put-attribute name="description" value="Login" />	
+		<put-attribute name="main_content" value="/jsp/crowdmodule/auth/login.jsp" />		
+	</definition>
+	
+	<definition name="auth/login_peoplehunt" template="/jsp/crowdmodule-mobile/peoplehunt/login.jsp">
+ 		<put-attribute name="title" value="Login PeopleHunt" />
+ 		<put-attribute name="description" value="Login" />				
+	</definition>	
+
+	<definition name="auth/login_success" template="/jsp/crowdmodule/layout/authentication_template.jsp">
+ 		<put-attribute name="title" value="Login success" />
+ 		<put-attribute name="description" value="Login success" />	
+		<put-attribute name="main_content" value="/jsp/crowdmodule/auth/login_success.jsp" />		
+	</definition>
+	
+	<definition name="auth/logout_success" template="/jsp/crowdmodule/layout/main_template.jsp">
+ 		<put-attribute name="title" value="Logout success" />
+ 		<put-attribute name="description" value="Logout success" />	
+		<put-attribute name="main_content" value="/jsp/crowdmodule/auth/logout_success.jsp" />		
+	</definition>
+        <!-- MOBILE-->
+	
+	<definition name="mobile/event/allevents" template="/jsp/crowdmodule-mobile/layout/template_allevents.jsp">
+     	<put-attribute name="title" value="All Events" />
+        <put-attribute name="description" value="All Events" />
+    </definition>
+	
+	 <definition name="mobile/event/retrievequestions" template="/jsp/crowdmodule-mobile/layout/template_webquestion.jsp">
+        <put-attribute name="title" value="Event" />
+        <put-attribute name="description" value="Event" />
+        <put-attribute name="main_content" value="/jsp/crowdmodule/event/retreivequestions.jsp" />	
+    </definition>
+	
+    <definition name="/mobile/auth/register/atd" template="/jsp/crowdmodule-mobile/layout/template_webquestion.jsp">
+ 	<put-attribute name="title" value="Registration attendees" />
+ 	<put-attribute name="description" value="Registration attendees" />	
+	<put-attribute name="main_content" value="/jsp/crowdmodule/auth/register_attendee_dev.jsp" />		
+    </definition>
+    
+    <definition name="peoplehunt/mobileregister" template="/jsp/crowdmodule-mobile/peoplehunt/register_attendee.jsp">
+ 	<put-attribute name="title" value="Add Details PeopleHunt" />
+ 	<put-attribute name="description" value="Add Details PeopleHunt" />	
+    </definition>	
+
+     <definition name="mobilepeoplehunt/questions" template="/jsp/crowdmodule-mobile/peoplehunt/peoplehunt_webquestions.jsp">
+        <put-attribute name="title" value="PeopleHunt Questions" />
+        <put-attribute name="description" value="Mobile Web PeopleHunt" />     	
+    </definition>
+    
+    <definition name="mobilepeoplehunt/profile" template="/jsp/crowdmodule-mobile/peoplehunt/peoplehuntprofile.jsp">
+        <put-attribute name="title" value="PeopleHunt Profile" />
+        <put-attribute name="description" value="PeopleHunt Profile" />
+    </definition>
+	
+    <definition name="mobile/picker_view" template="/jsp/crowdmodule-mobile/peoplehunt/peoplehunt_pickerview.jsp">
+        <put-attribute name="title" value="PeopleHunt GuessView" />
+        <put-attribute name="description" value="Mobile Web GuessView" />
+    </definition>
+    
+    <definition name="mobile/scoreboard" template="/jsp/crowdmodule-mobile/peoplehunt/peoplehunt_scoreboard.jsp">
+        <put-attribute name="title" value="PeopleHunt ScoreBoard" />
+        <put-attribute name="description" value="Mobile Web ScoreBoard" />
+    </definition>
+
+	<definition name="mobile/peoplehuntevents" template="/jsp/crowdmodule-mobile/peoplehunt/peoplehunt_events.jsp">
+        <put-attribute name="title" value="PeopleHunt Events" />
+        <put-attribute name="description" value="PeopleHunt Events" />
+    </definition>
+    
+    <definition name="mobile/peoplehuntfeed" template="/jsp/crowdmodule-mobile/peoplehunt/peoplehuntfeed.jsp">
+        <put-attribute name="title" value="PeopleHunt Feed" />
+        <put-attribute name="description" value="PeopleHunt Feed" />
+    </definition>
+    
+      
+    <definition name="connectionsmade" template="/jsp/crowdmodule-mobile/peoplehunt/connectionsmade.jsp">
+        <put-attribute name="title" value="PeopleHunt Connections Made" />
+        <put-attribute name="description" value="PeopleHunt Connections Made" />
+    </definition>
+    
+    <definition name="mobile/sociallinking" template="/jsp/crowdmodule-mobile/peoplehunt/sociallinking.jsp">
+        <put-attribute name="title" value="PeopleHunt SocialLinking" />
+        <put-attribute name="description" value="Social Linking" />
+    </definition>
+    
+    <definition name="edit_answers" template="/jsp/crowdmodule-mobile/peoplehunt/updatequestions.jsp">
+        <put-attribute name="title" value="Edit your answers" />
+        <put-attribute name="description" value="Edit your answers" />
+    </definition>    
+    
+    <definition name="viewtweet" template="/jsp/crowdmodule-mobile/peoplehunt/viewtweet.jsp">
+        <put-attribute name="title" value="View your tweet" />
+        <put-attribute name="description" value="View your tweet" />
+    </definition>   
+	
+
+ </tiles-definitions>      

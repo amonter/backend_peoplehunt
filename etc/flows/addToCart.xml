@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow 
+      http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+      
+    <persistence-context/>		
+	
+	<var name="event" class="com.myownmotivator.model.events.Event" />      
+       
+    <on-start>		
+		<set name="requestScope.itemId" value="requestParameters.itemId"/>
+		<set name="flowScope.partialList" value="true" type="boolean"/>
+		<set name="flowScope.event" value="event"/>	
+		<evaluate expression="cartController.retrieveCart(flowRequestContext)" result="conversationScope.cart" />			
+	</on-start>  
+		
+	<!-- If not specified, the start state is the first state specified. -->
+	<action-state id="addToCart" >	
+		<!-- action-state must have an evaluate element, a set element, or similar.  See the XSD. -->
+		<on-entry>
+			<evaluate expression="eventService.findEventDatabaseByGoogleId(itemId,partialList)" result="flowScope.eventos" />
+		</on-entry>	
+		<evaluate expression="cartController.saveCartItem(eventos,cart,flowRequestContext)" result="conversationScope.cart" />		
+		<transition to="cartItemAdded" />					
+	</action-state>      
+      
+    <end-state id="cartItemAdded" view="externalRedirect:contextRelative:/viewCart.do"/>
+      
+</flow>

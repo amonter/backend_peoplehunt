@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN" "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+
+<taglib>
+
+	<tlib-version>2.0</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>form</short-name>
+	<uri>meetforealtags</uri>
+	<description>Meet for real tag library</description>
+	
+	<tag>
+		<name>currentUserInSession</name>
+			<tag-class>com.myownmotivator.web.tag.CurrentUserInSessionTag</tag-class>
+			<body-content>scriptless</body-content>
+			<description>current user in the session</description>
+			<attribute>
+				<name>profileId</name>
+				<required>false</required>
+				<rtexprvalue>true</rtexprvalue>
+				<description>user request profile id</description>
+			</attribute>
+	</tag>
+	
+	<tag>
+		<name>tabSelector</name>
+			<tag-class>com.myownmotivator.web.tag.TabSelector</tag-class>
+			<body-content>scriptless</body-content>
+			<description>Selects the Tabs</description>
+			<attribute>
+				<name>value</name>
+				<required>true</required>
+				<rtexprvalue>true</rtexprvalue>
+				<description>property value</description>
+			</attribute>		
+	</tag>
+	
+	<tag>
+		<name>format</name>
+			<tag-class>com.myownmotivator.web.tag.StringFormatting</tag-class>
+			<body-content>empty</body-content>
+			<description>Formatting of Strings</description>
+			<attribute>
+				<name>escapedScript</name>
+				<required>false</required>
+				<rtexprvalue>true</rtexprvalue>
+				<description>escaped Javascript</description>
+			</attribute>
+			<attribute>
+				<name>length</name>
+				<required>false</required>
+				<rtexprvalue>true</rtexprvalue>
+				<description>lenght to abbreviate</description>
+			</attribute>			
+			<attribute>
+				<name>value</name>
+				<required>false</required>
+				<rtexprvalue>true</rtexprvalue>
+				<description>property value</description>
+			</attribute>
+			<attribute>
+				<name>printValue</name>
+				<required>false</required>
+				<rtexprvalue>true</rtexprvalue>
+				<description>to print or pageCOntenxt</description>
+			</attribute>
+	</tag>
+
+	
+</taglib>

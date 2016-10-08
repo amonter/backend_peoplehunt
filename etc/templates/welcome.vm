@@ -1,0 +1,10 @@
+<html>
+<body>
+<h3>Hi ${user.firstName},Wolcome to MeetFoReal!</h3>
+
+<div>
+   Your username is ${user.userName}.
+</div>
+</body>
+
+</html>

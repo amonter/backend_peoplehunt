@@ -1,0 +1,25 @@
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+ <tiles-definitions> 	
+ 	
+	<definition name="administration" template="/jsp/crowdscanner/admin/administration.jsp">
+		<put-attribute name="body-tile" value="body_login_admin" />		
+    	<put-attribute name="admintabs-tile" value="/jsp/crowdscanner/admin/admintabs.jsp" />
+	</definition>		
+ 		
+ 	<definition name="edit_blogpost_admin" extends="administration">
+		<put-attribute name="body-tile" value="/jsp/crowdscanner/admin/edit_blogpost.jsp" />			    	
+	</definition>		
+	
+	
+	<definition name="view_crowdblog_admin" extends="administration">
+		<put-attribute name="body-tile" value="/jsp/crowdscanner/admin/view_blogcrowd.jsp" />		    	
+	</definition>	
+	
+	<definition name="listeditcrowblog_admin" extends="administration">
+		<put-attribute name="body-tile" value="/jsp/crowdscanner/admin/admin_editpostcrowd.jsp" />		    	
+	</definition>	
+ 		
+ </tiles-definitions>

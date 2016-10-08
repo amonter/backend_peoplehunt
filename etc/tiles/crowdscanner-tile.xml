@@ -1,0 +1,257 @@
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+       
+       
+ <tiles-definitions>	
+     
+    <!-- NEW  --> 
+   	<definition name="friendmention" template="/jsp/friendmention.jsp">
+		<put-attribute name="title" value="Dummy" />
+                <put-attribute name="description" value="Mentioning friends" />
+	</definition>
+     
+ 	<definition name="front" template="/jsp/crowdscanner/front.jsp">
+		<put-attribute name="title" value="Making Conversations | CrowdScanner" />
+                <put-attribute name="description" value="Technology team building, icebreaker game, PeopleHunt, on iphone and android, for facilitating face to face interactions between adults at corporate events" />
+	</definition> 	
+	
+	<definition name="the_profile" template="/jsp/crowdscanner/main_template.jsp">
+ 		<put-attribute name="title" expression="${title}" />
+ 		<put-attribute name="description" value="We are Adrian Avendano and Ellen Dudley" />	
+		<put-attribute name="main_content" value="/jsp/crowdscanner/view_profile.jsp" />		
+	</definition>
+	
+	<definition name="view_theblog" template="/jsp/crowdscanner/main_template.jsp">
+ 		<put-attribute name="title" expression="${title}" />	
+ 		<put-attribute name="description" expression="Technology blog for iphone, android, icebreaking game, PeopleHunt, for facilitating face to face interactions between new people, adults, at corporate events" />
+		<put-attribute name="main_content" value="/jsp/crowdscanner/blog/view_theblog.jsp" />		
+	</definition>
+	
+	<definition name="view_theblogpost" template="/jsp/crowdscanner/main_template.jsp">
+ 		<put-attribute name="title" expression="${title}" />	
+ 		<put-attribute name="description" expression="${description}" />
+		<put-attribute name="main_content" value="/jsp/crowdscanner/blog/view_blogpost.jsp" />		
+	</definition>
+	
+	<definition name="aboutus_crowd" template="/jsp/crowdscanner/main_template.jsp">
+ 		<put-attribute name="title" value="Who's behind Crowdscanner" />
+ 		<put-attribute name="description" value="Adrian Avendano and Ellen Dudley, co-founders of CrowdScanner, makers of PeopleHunt, icebreaker app for conversation between new people at events" />	
+		<put-attribute name="main_content" value="/jsp/crowdscanner/aboutus.jsp" />		
+	</definition>
+
+	<definition name="crowdscanner_story" template="/jsp/crowdscanner/main_template.jsp">
+ 		<put-attribute name="title" value="CrowdScanner Story" />
+ 		<put-attribute name="description" value="We are Adrian Avendano and Ellen Dudley" />	
+		<put-attribute name="main_content" value="/jsp/crowdscanner/crowdscanner_story.jsp" />		
+	</definition>	
+	
+	<definition name="jobs" template="/jsp/crowdscanner/main_template.jsp">
+ 		<put-attribute name="title" value="Awesome job for awesome person | CrowdScanner" />
+ 		<put-attribute name="description" value="Jobs or awesome people we are looking for | CrowdScanner" />	
+		<put-attribute name="main_content" value="/jsp/crowdscanner/jobs.jsp" />		
+	</definition>
+	
+	<definition name="pricing" template="/jsp/crowdscanner/main_template.jsp">
+ 		<put-attribute name="title" value="PeopleHunt Pricing | CrowdScanner" />
+ 		<put-attribute name="description" value="PeopleHunt Pricing | CrowdScanner" />	
+		<put-attribute name="main_content" value="/jsp/crowdscanner/pricing.jsp" />		
+	</definition>
+	
+	
+	<definition name="freetrial" template="/jsp/crowdscanner/main_template.jsp">
+ 		<put-attribute name="title" value="PeopleHunt Trial | CrowdScanner" />
+ 		<put-attribute name="description" value="Free trial for technological icebreaker game, PeopleHunt, on iphone and android, for facilitating face to face interactions between adults at corporate events" />	
+		<put-attribute name="main_content" value="/jsp/crowdscanner/freetrial.jsp" />		
+	</definition>
+	
+	<definition name="faq" template="/jsp/crowdscanner/main_template.jsp">
+ 		<put-attribute name="title" value="How to set up | PeopleHunt" />
+ 		<put-attribute name="description" value="FAQ on technology team building, icebreaker game, PeopleHunt, on iphone and android, for facilitating face to face interactions at corporate events" />	
+		<put-attribute name="main_content" value="/jsp/crowdscanner/faq.jsp" />		
+	</definition>
+
+	<definition name="not_found" template="/jsp/crowdscanner/main_template.jsp">
+ 		<put-attribute name="title" value="CrowdScanner Not Found" />
+ 		<put-attribute name="description" value="Not found page" />	
+		<put-attribute name="main_content" value="/jsp/crowdscanner/not_found.html" />		
+	</definition>
+
+	<definition name="peoplehunt_page" template="/jsp/crowdscanner/main_template.jsp">
+ 		<put-attribute name="title" value="PeopleHunt | How it works" />
+ 		<put-attribute name="description" value="Technology team building, icebreaker game, PeopleHunt, on iphone and android, for facilitating face to face interactions between adults at corporate events" />
+		<put-attribute name="main_content" value="/jsp/crowdscanner/peoplehunt.jsp" />	
+	</definition>
+	
+	<definition name="error_page" template="/jsp/crowdscanner/error_page.html"">
+ 		<put-attribute name="title" value="CrowdScanner Not Found" />
+ 		<put-attribute name="description" value="Not found page" />			
+	</definition>
+	
+
+	<definition name="how_itworks" template="/jsp/crowdscanner/main_template.jsp">
+		<put-attribute name="title" value="How it works | CrowdScanner" />
+                <put-attribute name="description" value="How to use CrowdScanner at an event" />
+                <put-attribute name="main_content" value="/j	sp/crowdscanner/howitworks.jsp" />
+	</definition>
+	
+	<definition name="howyoufeel" template="/jsp/crowdscanner/main_template.jsp">
+ 		<put-attribute name="title" value="How you feel using it" />	
+ 		<put-attribute name="description" value="Description how you feel using it" />
+		<put-attribute name="main_content" value="/jsp/crowdscanner/howyoufeel.jsp" />		
+	</definition>
+	
+	
+	<definition name="howtouse" template="/jsp/crowdscanner/main_template.jsp">
+        	<put-attribute name="title" value="How to Use | Social Objects" />   
+         	<put-attribute name="description" value="description of how to use social objects iphone " />
+        	<put-attribute name="main_content" value="/jsp/crowdscanner/howtouse.jsp" />       
+    	</definition>
+   
+    	<definition name="preview_orderbadges" template="/jsp/crowdscanner/main_template.jsp">
+         	<put-attribute name="title" value="Order Badges | PeopleHunt" />   
+         	<put-attribute name="description" value="Order Badges for PeopleHunt game " />
+        	<put-attribute name="main_content" value="/jsp/crowdscanner/preview_orderbadges.jsp" />       
+    	</definition>
+   	
+	<definition name="rww" template="/jsp/crowdscanner/rww.jsp">
+ 		<put-attribute name="title" value="RWW | PeopleHunt" />	
+ 		<put-attribute name="description" value="Technology team building, icebreaker game, PeopleHunt, on iphone and android, for facilitating face to face interactions between adults at corporate events" />
+		<put-attribute name="main_content" value="/jsp/crowdscanner/rww.jsp" />		
+	</definition>
+
+	<definition name="ecomm" template="/jsp/crowdscanner/ecomm.jsp">
+ 		<put-attribute name="title" value="eComm | PeopleHunt" />	
+ 		<put-attribute name="description" value="Technology team building, icebreaker game, PeopleHunt, on iphone and android, for facilitating face to face interactions between adults at corporate events" />
+		<put-attribute name="main_content" value="/jsp/crowdscanner/ecomm.jsp" />		
+	</definition>
+	
+
+	
+	<definition name="rwwleaders" template="/jsp/crowdscanner/gaming/gaming_template.jsp">
+ 		<put-attribute name="title" value="Leaders | PeopleHunt" />	
+ 		<put-attribute name="description" value="Leaderboard for technology icebreaker game, PeopleHunt, on iphone and android, for facilitating face to face interactions between adults at corporate events" />
+		<put-attribute name="main_content" value="/jsp/crowdscanner/rwwleaders.jsp" />		
+	</definition> 
+	
+	<definition name="ecommleaders" template="/jsp/crowdscanner/gaming/gaming_template.jsp">
+                <put-attribute name="title" value="Leaders | PeopleHunt" />
+                <put-attribute name="description" value="Leaderboard for technology icebreaker game, PeopleHunt, on iphone and android, for facilitating face to face interactions between adults at corporate events" />
+                <put-attribute name="main_content" value="/jsp/crowdscanner/ecommleaders.jsp" />
+        </definition>
+
+	<!-- MOBILE Tiles  -->
+	<definition name="front_mobile" template="/jsp/crowdscanner-mobile/front.jsp">
+ 		<put-attribute name="title" value="Making Conversations | CrowdScanner" />
+ 		<put-attribute name="description" value="Technology team building, icebreaker game, PeopleHunt, on iphone and android, for facilitating face to face interactions between adults at corporate events" />	
+	</definition>	
+	
+	<definition name="aboutus_mobile" template="/jsp/crowdscanner-mobile/main_template.jsp">
+ 		<put-attribute name="title" value="Who's behind Crowdscanner" />
+ 		<put-attribute name="description" value="Adrian Avendano and Ellen Dudley, co-founders of CrowdScanner, makers of PeopleHunt, icebreaker app for conversation between new people at events" />	
+		<put-attribute name="main_content" value="/jsp/crowdscanner-mobile/aboutus.jsp" />		
+	</definition>
+	
+	<definition name="theprofile_mobile" template="/jsp/crowdscanner-mobile/main_template.jsp">
+ 		<put-attribute name="title" expression="${title}" />
+ 		<put-attribute name="description" value="We are Adrian Avendano and Ellen Dudley" />	
+		<put-attribute name="main_content" value="/jsp/crowdscanner-mobile/the_profile.jsp" />		
+	</definition>
+	
+	<definition name="viewtheblog_mobile" template="/jsp/crowdscanner-mobile/main_template.jsp">
+ 		<put-attribute name="title" expression="${title}" />	
+ 		<put-attribute name="description" expression="Technology blog for iphone, android, icebreaking game, PeopleHunt, for facilitating face to face interactions between new people, adults, at corporate events" />
+		<put-attribute name="main_content" value="/jsp/crowdscanner-mobile/blog/view_theblog.jsp" />		
+	</definition>
+	
+	<definition name="viewtheblogpost_mobile" template="/jsp/crowdscanner-mobile/main_template.jsp">
+ 		<put-attribute name="title" expression="${title}" />	
+ 		<put-attribute name="description" expression="${description}" />
+		<put-attribute name="main_content" value="/jsp/crowdscanner/blog/view_blogpost.jsp" />		
+	</definition>
+	
+	
+	<definition name="howitworks_mobile" template="/jsp/crowdscanner-mobile/main_template.jsp">
+ 		<put-attribute name="title" value="How to use it | CrowdScanner" />	
+ 		<put-attribute name="description" value="description use it" />
+		<put-attribute name="main_content" value="/jsp/crowdscanner-mobile/howitworks.jsp" />		
+	</definition>
+	
+	<definition name="howyoufeel_mobile" template="/jsp/crowdscanner-mobile/main_template.jsp">
+ 		<put-attribute name="title" value="How you feel using it" />	
+ 		<put-attribute name="description" value="Description how you feel using it" />
+		<put-attribute name="main_content" value="/jsp/crowdscanner-mobile/howyoufeel.jsp" />		
+	</definition>
+
+	<definition name="howtouse_mobile" template="/jsp/crowdscanner-mobile/main_template.jsp">
+        	 <put-attribute name="title" value="How to use  | Social Objects " />    
+        	 <put-attribute name="description" value="description use it" />
+        	<put-attribute name="main_content" value="/jsp/crowdscanner-mobile/howtouse.jsp" />        
+    	</definition>
+    
+   
+    	<definition name="peoplehunt_mobile" template="/jsp/crowdscanner-mobile/main_template.jsp">
+        	<put-attribute name="title" value="How it works  |  People Hunt" />    
+        	<put-attribute name="description" value="Technology team building, icebreaker game, PeopleHunt, on iphone and android, for facilitating face to face interactions between adults at corporate events" />
+        	<put-attribute name="main_content" value="/jsp/crowdscanner-mobile/peoplehunt.jsp" />        
+    	</definition>
+    
+    	<definition name="jobs_mobile" template="/jsp/crowdscanner-mobile/main_template.jsp">
+        	<put-attribute name="title" value="Jobs  |  CrowdScanner" />    
+        	<put-attribute name="description" value="description of job openings at crowdscanner" />
+        	<put-attribute name="main_content" value="/jsp/crowdscanner-mobile/jobs.jsp" />        
+    	</definition>
+
+	<definition name="rww_mobile" template="/jsp/crowdscanner-mobile/rww.jsp">
+ 		<put-attribute name="title" value="RWW | PeopleHunt" />	
+ 		<put-attribute name="description" value="Technology team building, icebreaker game, PeopleHunt, on iphone and android, for facilitating face to face interactions between adults at corporate events" />
+		<put-attribute name="main_content" value="/jsp/crowdscanner-mobile/rww.jsp" />		
+	</definition>
+	
+	<definition name="rwwleaders_mobile" template="/jsp/crowdscanner/gaming/gaming_template.jsp">
+ 		<put-attribute name="title" value="Leaders | PeopleHunt" />	
+ 		<put-attribute name="description" value="Leaderboard for technology icebreaker game, PeopleHunt, on iphone and android, for facilitating face to face interactions between adults at corporate events" />
+		<put-attribute name="main_content" value="/jsp/crowdscanner-mobile/rwwleaders.jsp" />		
+	</definition>	
+	
+	
+	<definition name="mobile/freetrial" template="/jsp/crowdscanner/main_template.jsp">
+ 		<put-attribute name="title" value="PeopleHunt Trial | CrowdScanner" />
+ 		<put-attribute name="description" value="Free trial for technological icebreaker game, PeopleHunt, on iphone and android, for facilitating face to face interactions between adults at corporate events" />	
+		<put-attribute name="main_content" value="/jsp/crowdscanner-mobile/freetrial.jsp" />		
+	</definition>
+	
+	
+	
+	<definition name="addyoureventsxsw_page" template="/jsp/crowdscanner/main_template.jsp">
+ 		<put-attribute name="title" value="PeopleHunt Trial | CrowdScanner" />
+ 		<put-attribute name="description" value="Free trial for technological icebreaker game, PeopleHunt, on iphone and android, for facilitating face to face interactions between adults at corporate events" />	
+		<put-attribute name="main_content" value="/jsp/crowdscanner-mobile/addyoueventsxsw.jsp" />		
+	</definition>
+
+	<definition name="ecomm_mobile" template="/jsp/crowdscanner-mobile/ecomm.jsp">
+                <put-attribute name="title" value="eComm | PeopleHunt" />
+                <put-attribute name="description" value="Technology team building, icebreaker game, PeopleHunt, on iphone and android, for facilitating face to face interactions between adults at corporate events" />
+                <put-attribute name="main_content" value="/jsp/crowdscanner-mobile/ecomm.jsp" />
+        </definition>	
+	
+	<definition name="ecommleaders_mobile" template="/jsp/crowdscanner/gaming/gaming_template.jsp">
+                <put-attribute name="title" value="Leaders | PeopleHunt" />
+                <put-attribute name="description" value="Leaderboard for technology team building, icebreaker game, PeopleHunt, on iphone and android, for facilitating face to face interactions between adults at corporate events" />
+                <put-attribute name="main_content" value="/jsp/crowdscanner-mobile/ecommleaders.jsp" />
+        </definition>
+
+	<!-- GAMING  -->
+	
+	<definition name="gaming/leaderboard" template="/jsp/crowdscanner/gaming/gaming_template.jsp">
+ 		<put-attribute name="title" value="MindField People Hunt" />
+ 		<put-attribute name="description" value="MindField People Hunt" />	
+	</definition>
+	
+	<definition name="casestudy_mindfield" template="/jsp/crowdscanner/gaming/mindfield_casestudy.jsp">
+ 		<put-attribute name="title" value="MindField People Hunt" />
+ 		<put-attribute name="description" value="MindField People Hunt" />			
+		<put-attribute name="main_content" value="/jsp/crowdscanner/gaming/mindfield_casestudy.jsp" />
+	</definition> 
+	
+ </tiles-definitions>  

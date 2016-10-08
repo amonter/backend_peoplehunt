@@ -1,0 +1,48 @@
+<html>
+<body>
+	<p>
+		Hey ${user.lastName}
+	</p>
+	<p>
+		Welcome from Ellen & Adrian, founders of meetforeal.com. 
+	</p>
+	<p>
+		Meetforeal.com is a web 2.0 platform, dedicated to connecting people through common interests, 
+		and bringing them together in real life, creating a network of people who love learning, sharing and having cool conversations.
+		
+	</p>
+	<p>
+		Meetforeal events are specifically designed so that you can 
+		<ul>
+			<li>Learn something new from an expert/experts and eachother</li>
+			<li>Share, participate and express your ideas</li> 
+			<li>Meet like-minded people</li>
+		</ul>
+	</p>
+	As a Meetforeal member, you can   
+		<ul>
+			<li>Check out upcoming events</li>	
+			<li>See who’s coming</li>
+			<li>Book your place online</li>	
+			<li>Post on the forum</li>
+			<li>Send & receive emails with other users and reconnect</li>		
+			<li>Get great <b>special offers!</b></li>					
+		</ul>
+		
+	</p>	
+	<p>
+		We want you to enjoy meetforeal, so if you have any queries, comments, recommendations or complaints, please send them on to us, and we will get back to you as soon as we can.
+	</p>
+	
+	
+	<p>
+		<div>
+			We are excited about meeting you at an event that you are passionate about!
+		</div>
+		Adrian & Ellen<br>
+		Meetforeal Founders<br>
+		<a href="mailto:adrian@meetforeal.com">adrian@meetforeal.com</a><br>		
+		<a href="mailto:ellen@meetforeal.com">ellen@meetforeal.com</a><br>	
+	</p>
+</body>
+</html>

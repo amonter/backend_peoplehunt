@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://www.meetforeal.com/</loc>
+  <priority>1.00</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/index.do</loc>
+  <priority>0.26</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/createuser.do</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/viewpageaboutus.do</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/navigateprofile.do</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/browseforums.do</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/browseevents.do</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveblog.do</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/postcomment.do?blogPostId=19</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveevent.do?eid=http://www.google.com/calendar/feeds/r975a1bppid43vhdi5gemn75dg@group.calendar.google.com/public/full/suqdbe636egntr8o8r0fjec3v8&amp;date=</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveevent.do?eid=http://www.google.com/calendar/feeds/r975a1bppid43vhdi5gemn75dg@group.calendar.google.com/public/full/43ejp0qt7rc7vg6v79bttnqn9c&amp;date=</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveevent.do?eid=http://www.google.com/calendar/feeds/r975a1bppid43vhdi5gemn75dg@group.calendar.google.com/public/full/7otcpguqrvrtpmpisilhqglols&amp;date=</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveevent.do?eid=http://www.google.com/calendar/feeds/r975a1bppid43vhdi5gemn75dg@group.calendar.google.com/public/full/jjtqvtv7rpb2uhb285tkv608po&amp;date=</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveevent.do?eid=http://www.google.com/calendar/feeds/r975a1bppid43vhdi5gemn75dg@group.calendar.google.com/public/full/481ql9m48g634sfkpctqkbu8ls&amp;date=</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveuserhome.do?profileid=134</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveuserhome.do?profileid=135</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveuserhome.do?profileid=136</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveuserhome.do?profileid=137</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveuserhome.do?profileid=138</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveuserhome.do?profileid=141</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveuserhome.do?profileid=142</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveuserhome.do?profileid=143</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveevent.do?eid=http://www.google.com/calendar/feeds/r975a1bppid43vhdi5gemn75dg@group.calendar.google.com/public/full/suqdbe636egntr8o8r0fjec3v8</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveuserhome.do?profileid=103</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveuserhome.do?profileid=67</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveevent.do?eid=http://www.google.com/calendar/feeds/r975a1bppid43vhdi5gemn75dg@group.calendar.google.com/public/full/43ejp0qt7rc7vg6v79bttnqn9c</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveevent.do?eid=http://www.google.com/calendar/feeds/r975a1bppid43vhdi5gemn75dg@group.calendar.google.com/public/full/7otcpguqrvrtpmpisilhqglols</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveuserhome.do?profileid=84</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveevent.do?eid=http://www.google.com/calendar/feeds/r975a1bppid43vhdi5gemn75dg@group.calendar.google.com/public/full/jjtqvtv7rpb2uhb285tkv608po</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveevent.do?eid=http://www.google.com/calendar/feeds/r975a1bppid43vhdi5gemn75dg@group.calendar.google.com/public/full/481ql9m48g634sfkpctqkbu8ls</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/viewpastevents.do</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/viewtestimonies.do</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/viewpageterms.do</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/viewpageprivacy.do</loc>
+  <priority>0.64</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/presentforgotpassword.do</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?goal=Super Travellers</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?goal=Link up with Languages</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?goal=Food for the Brain</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?goal=Human Interaction</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?goal=Brain Work</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?goal=Healthy Beans</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?goal=Fitness Fanatics</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?goal=Artists Arena</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?goal=Moved by Music</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?goal=Geeks Galore</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?goal=Eat and Drink</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?goal=Expert Zone</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?goal=Jokes</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?goal=The Meetforeal Concept</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?goal=</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?goal=Eat</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/postcomment.do?blogPostId=18</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/postcomment.do?blogPostId=17</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/postcomment.do?blogPostId=16</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/postcomment.do?blogPostId=15</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/postcomment.do?blogPostId=14</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/postcomment.do?blogPostId=13</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/postcomment.do?blogPostId=12</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/postcomment.do?blogPostId=11</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/postcomment.do?blogPostId=10</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/postcomment.do?blogPostId=9</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrievepastevent.do?eid=http://www.google.com/calendar/feeds/r975a1bppid43vhdi5gemn75dg@group.calendar.google.com/public/full/49qd5ercgmsuq933ci85419fhc&amp;date=2009-02-05</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrievepastevent.do?eid=http://www.google.com/calendar/feeds/r975a1bppid43vhdi5gemn75dg@group.calendar.google.com/public/full/4nk5kq4f8p783s79vbsbspra64&amp;date=2009-02-04</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrievepastevent.do?eid=http://www.google.com/calendar/feeds/r975a1bppid43vhdi5gemn75dg@group.calendar.google.com/public/full/a9mo3a6p9qsguvij4eg9al9pko&amp;date=2009-02-11</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrievepastevent.do?eid=http://www.google.com/calendar/feeds/r975a1bppid43vhdi5gemn75dg@group.calendar.google.com/public/full/b89q6j6pu97qrksn2d5shhjndg&amp;date=2009-02-12</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrievepastevent.do?eid=http://www.google.com/calendar/feeds/r975a1bppid43vhdi5gemn75dg@group.calendar.google.com/public/full/g135h5fnkn57mpo6pa8vlmfe5c&amp;date=2009-02-12</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveevent.do?eid=http://www.google.com/calendar/feeds/r975a1bppid43vhdi5gemn75dg@group.calendar.google.com/public/full/49qd5ercgmsuq933ci85419fhc</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveevent.do?eid=http://www.google.com/calendar/feeds/r975a1bppid43vhdi5gemn75dg@group.calendar.google.com/public/full/4nk5kq4f8p783s79vbsbspra64</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveevent.do?eid=http://www.google.com/calendar/feeds/r975a1bppid43vhdi5gemn75dg@group.calendar.google.com/public/full/a9mo3a6p9qsguvij4eg9al9pko</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveevent.do?eid=http://www.google.com/calendar/feeds/r975a1bppid43vhdi5gemn75dg@group.calendar.google.com/public/full/b89q6j6pu97qrksn2d5shhjndg</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveevent.do?eid=http://www.google.com/calendar/feeds/r975a1bppid43vhdi5gemn75dg@group.calendar.google.com/public/full/g135h5fnkn57mpo6pa8vlmfe5c</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveuserhome.do?profileid=124</loc>
+  <priority>0.51</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumthreads.do?postpk=1</loc>
+  <priority>0.41</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumthreads.do?postpk=11</loc>
+  <priority>0.41</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumthreads.do?postpk=17</loc>
+  <priority>0.41</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveuserhome.do?profileid=83</loc>
+  <priority>0.41</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumthreads.do?postpk=5</loc>
+  <priority>0.41</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumthreads.do?postpk=7</loc>
+  <priority>0.41</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveuserhome.do?profileid=100</loc>
+  <priority>0.41</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumthreads.do?postpk=6</loc>
+  <priority>0.41</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumthreads.do?postpk=15</loc>
+  <priority>0.41</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumthreads.do?postpk=4</loc>
+  <priority>0.41</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumthreads.do?postpk=10</loc>
+  <priority>0.41</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumthreads.do?postpk=12</loc>
+  <priority>0.41</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumthreads.do?postpk=8</loc>
+  <priority>0.41</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumthreads.do?postpk=14</loc>
+  <priority>0.41</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumthreads.do?postpk=19</loc>
+  <priority>0.41</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveuserhome.do?profileid=126</loc>
+  <priority>0.41</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumthreads.do?postpk=18</loc>
+  <priority>0.41</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumthreads.do?postpk=13</loc>
+  <priority>0.41</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumthreads.do?postpk=16</loc>
+  <priority>0.41</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveuserhome.do?profileid=113</loc>
+  <priority>0.41</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveuserhome.do?profileid=93</loc>
+  <priority>0.41</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveuserhome.do?profileid=121</loc>
+  <priority>0.41</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveuserhome.do?profileid=99</loc>
+  <priority>0.41</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveuserhome.do?profileid=128</loc>
+  <priority>0.41</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveuserhome.do?profileid=131</loc>
+  <priority>0.41</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveuserhome.do?profileid=133</loc>
+  <priority>0.41</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?forumpk=5</loc>
+  <priority>0.33</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?forumpk=6</loc>
+  <priority>0.33</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?forumpk=7</loc>
+  <priority>0.33</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?forumpk=8</loc>
+  <priority>0.33</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumthreads.do?postpk=15&amp;d-2691614-p=2</loc>
+  <priority>0.33</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?forumpk=9</loc>
+  <priority>0.33</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveuserhome.do?profileid=112</loc>
+  <priority>0.33</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumthreads.do?postpk=4&amp;d-2691614-p=2</loc>
+  <priority>0.33</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?forumpk=11</loc>
+  <priority>0.33</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?forumpk=12</loc>
+  <priority>0.33</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?forumpk=13</loc>
+  <priority>0.33</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?forumpk=14</loc>
+  <priority>0.33</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?forumpk=21</loc>
+  <priority>0.33</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumposts.do?forumpk=22</loc>
+  <priority>0.33</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveevent.do?eid=http://www.google.com/calendar/feeds/r975a1bppid43vhdi5gemn75dg@group.calendar.google.com/public/full/481ql9m48g634sfkpctqkbu8ls&amp;date=2009-03-05</loc>
+  <priority>0.33</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumthreads.do?postpk=15&amp;d-2691614-p=1</loc>
+  <priority>0.26</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumthreads.do?postpk=15&amp;d-2691614-p=</loc>
+  <priority>0.26</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumthreads.do?postpk=4&amp;d-2691614-p=1</loc>
+  <priority>0.26</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveforumthreads.do?postpk=4&amp;d-2691614-p=</loc>
+  <priority>0.26</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.meetforeal.com/retrieveevent.do?eid=http://www.google.com/calendar/feeds/r975a1bppid43vhdi5gemn75dg@group.calendar.google.com/public/full/g135h5fnkn57mpo6pa8vlmfe5c&amp;date=2009-02-12</loc>
+  <priority>0.26</priority>
+  <lastmod>2009-02-19T19:32:59+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+</urlset>

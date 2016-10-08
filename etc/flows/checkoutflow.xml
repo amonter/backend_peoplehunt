@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow 
+      http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+	
+	<persistence-context/>	
+	
+	<var name="userLogin" class="com.myownmotivator.model.UserLogin" />
+	<var name="user" class="com.myownmotivator.model.User" />
+	<var name="dateUtils" class="com.myownmotivator.web.utils.DateUtils" />
+	<var name="countryUtils" class="com.myownmotivator.web.utils.CountryListUtil" />
+	
+		
+	<on-start>				
+		  <evaluate expression="checkoutController.checkSessionContext(externalContext.sessionMap.userSessionContext,flowRequestContext)" result="conversationScope.sessionContext"  />
+		  <evaluate expression="cartController.retrieveCart(flowRequestContext)" result="conversationScope.cart" />	
+	</on-start>		
+	
+	<decision-state id="checkoutflow">
+   	 	<if test="sessionContext.authenticated" then="getUser" else="needsAuthentication"/>
+	</decision-state>		
+	
+	<view-state id="needsAuthentication" view="login_plugin" model="userLogin">
+		<transition on="authenticate" to="payViewDetails">
+			<evaluate expression="checkoutController.setSessionContext(flowRequestContext,userLogin)" result="flowScope.user"/>
+		</transition>
+		<transition on="createaccount" validate="false" bind="false" to="createAccountAction" />	
+	</view-state>			
+	
+	<view-state id="createAccountAction" view="create_user" model="user">
+		<on-render>
+		    <evaluate expression="dateUtils.getDayList()" result="viewScope.dayList"  />
+		    <evaluate expression="dateUtils.getMonthList()" result="viewScope.monthList"/>
+		    <evaluate expression="dateUtils.getYearList()" result="viewScope.yearList"  />
+		    <evaluate expression="countryUtils.getCountryList()" result="viewScope.countryList"  />
+		    <evaluate expression="checkoutController.retrievePublicity()" result="viewScope.publicityList"  />
+		    <evaluate expression="checkoutController.setUserCountry(user)" result="viewScope.user"  />				  
+		</on-render>		
+		<transition on="submituser" to="payViewDetails" bind="true" validate="true">
+			 <evaluate expression="UserService.saveUserFlow(user)" result="flowScope.user"/>			   
+		</transition>
+	</view-state>	
+	
+	<action-state id="getUser">	
+		<evaluate expression="sessionContext.getUser()" result="flowScope.user" />			
+		<transition to="payViewDetails"/>		
+	</action-state>
+	
+	<action-state id="payViewDetails">
+		<evaluate expression="checkoutController.createOrder(flowScope.user,cart,flowRequestContext)" result="flowScope.order"  />	
+		<transition to="checkout_end"/>				
+	</action-state>					
+	
+	<end-state id="checkout_end"  view="externalRedirect:contextRelative:/checkout_ready.do" />
+	<end-state id="backView" view="externalRedirect:contextRelative:/index.do"/>
+	<end-state id="home" view="externalRedirect:contextRelative:/index.do"/>
+	<end-state id="forum" view="externalRedirect:contextRelative:/browseforums.do"/>
+	<end-state id="blog" view="externalRedirect:contextRelative:/retrieveblog.do"/>
+	<end-state id="profile" view="externalRedirect:contextRelative:/navigateprofile.do"/>	
+	<end-state id="events" view="externalRedirect:contextRelative:/browseevents.do"/>
+	<end-state id="logout" view="externalRedirect:contextRelative:/logoutuserhome.do"/>	
+	<end-state id="viewCart" view="externalRedirect:contextRelative:/viewCart.do"/> 
+	<end-state id="video" view="externalRedirect:contextRelative:/listvideos.do"/>    	
+	
+	<global-transitions>
+    	<transition on="home" bind="false" validate="false" to="home"/>
+    	<transition on="end" bind="false" validate="false" to="end"/>
+    	<transition on="forum" bind="false" validate="false" to="forum" />
+    	<transition on="profile" bind="false" validate="false" to="profile"/> 
+    	<transition on="video" bind="false" validate="false" to="video"/> 
+    	<transition on="blog" bind="false" validate="false" to="blog" />   	
+    	<transition on="events" bind="false" validate="false" to="events"/> 
+    	<transition on="logout" validate="false" bind="false" to="logout"/>
+    	<transition on="viewCart" validate="false" bind="false" to="viewCart"/>        	
+	</global-transitions>	
+	
+</flow>

@@ -1,0 +1,49 @@
+
+<html>
+<body>
+	<p>
+		Hi ${plan.profile.user.userName}.
+	</p>
+	<p>
+		Invoice Number: ${plan.id}<br>
+		Total Amount: ${plan.totalAmount}<br>
+		Number of Badges:${plan.numberBadges}<br>
+		Address 
+	</p>
+	<p>	
+		-------------------------------------------
+	</p>	
+	<p>
+		<div>
+			<b>Thanks for booking your place for:</b> 
+		</div>
+		<table>			
+			
+						
+		</table>
+		<div>
+		
+		</div>
+	</p>		
+	
+	<p>
+		Check out who else is coming  <a href="http://www.meetforeal.com/retrieveevent.do?eid=$find_event">  here</a>.
+	</p>
+	<p>
+		We want you to enjoy meetforeal, so if you have any queries, comments, 
+		recommendations or complaints, please send them on to us, and we will get back to you as soon as we can.				
+	</p>
+	<p>
+		For details regarding refunds and cancellations, please see <a href="http://www.meetforeal.com/viewpageterms.do">here</a>. 
+	</p>
+	<p>
+		<div>
+			We are excited about meeting you at this event!
+		</div>
+		Adrian & Ellen<br>
+		Meetforeal Founders<br>
+		<a href="mailto:adrian@meetforeal.com">adrian@meetforeal.com</a><br>		
+		<a href="mailto:ellen@meetforeal.com">ellen@meetforeal.com</a><br>	
+	</p>
+</body>
+</html>

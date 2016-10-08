@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	
+	<context:annotation-config/>
+    <context:component-scan base-package="com.myownmotivator" use-default-filters="false">
+  		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
+	
+	
+	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="org.springframework.dao.DataAccessException">dataAccessFailure</prop>
+				<prop key="org.springframework.transaction.TransactionException">dataAccessFailure</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- administration beans	-->
+	 <bean name="/admin*" class="com.myownmotivator.web.controllers.administration.AdministrationTasks" >
+     	<property name="methodNameResolver" ref="methodNameResolverAdmin" />
+     	<property name="profileService" ref="profileService"/>
+     	<property name="postService" ref="PostService"/>
+     	<property name="configService" ref="ConfigService"/> 
+     	<property name="cartService" ref="cartService"/>
+     	<property name="forumService" ref="forumService"/>         	     	
+   	</bean>
+	
+	 <bean name="/uploadImageAdmin.htm" class="com.myownmotivator.web.controllers.administration.FileUploaderAdmin" >
+       <property name="fileService">
+    		<ref bean="FileService"/>
+       </property>
+    </bean>  
+    
+	<bean id="methodNameResolverAdmin"
+		class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">		
+		<property name="mappings">
+			<props>			
+				<prop key="/admin.htm">getAdministration</prop>
+				<prop key="/admindeleteprofile.htm">deleteProfile</prop>
+				<prop key="/adminpresentforum.htm">getForum</prop>
+				<prop key="/adminshowforum.htm">getForumAdmin</prop>
+				<prop key="/admindeletethread.htm">deleteThread</prop>
+				<prop key="/adminconfig.htm">getConfig</prop>
+				<prop key="/adminaddupdateconfiguration.htm">addUpdateConfigValue</prop> 
+				<prop key="/admindeleteconfig.htm">deleteConfig</prop>
+				<prop key="/adminsearchusers.htm">seachUsers</prop>
+			</props>
+		</property>
+	</bean>	
+	
+	<bean id="securityMapper" class="org.springplugins.web.SelectedAnnotationHandlerMapping">
+		<property name="order">
+			<value>0</value>
+		</property>
+		<property name="urls">
+			<list>
+				<value>/publishpodcast.htm</value>								
+			</list>
+		</property>
+		<property name="interceptors">
+			<list>
+		    	<ref bean="authenticationInterceptor"/>
+				<ref bean="openSessionInViewInterceptor"/>         
+			</list>
+		</property>
+	</bean> 
+	
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" >
+  		<property name="order">
+			<value>1</value>
+		</property>		
+	 	<property name="interceptors">
+	       	<list>
+	       		<ref bean="authenticationInterceptor"/>
+	           	<ref bean="openSessionInViewInterceptor"/>                        
+	         </list>
+	   	</property>
+  	</bean>
+  	
+  	<bean id="handlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
+  		<property name="order">
+			<value>2</value>
+		</property>
+		<property name="interceptors">
+	            <list>
+	                <ref bean="authenticationInterceptor"/>
+	                <ref bean="openSessionInViewInterceptor"/>     	              
+	            </list>
+	    </property>
+	</bean>   		
+
+</beans>
